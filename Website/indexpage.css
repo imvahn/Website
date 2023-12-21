@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-container {
+    text-align: center; /* Centers the text horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the items vertically */
+}
+
+.slider {
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    /* background-color: aqua; */
+    max-width: 1200;
+    width: 100%;
+    margin: auto;
+}

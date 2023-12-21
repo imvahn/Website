@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Vahn Kessler
+        </title>
+
+        <link rel="stylesheet" href="sidebar.css">
+        <link rel="stylesheet" href="indexpage.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="resume.css">
+
+    </head>
+    <section class="section-1">
+        <div class="text-container">
+            <p style="font-size: 50px;">Vahn Kessler</p>
+            <p style="font-size: 30px;">Triple Major in: Computer Science, Mathematics, Music<br>at Wesleyan University</p>
+        </div>
+    </section>
+    <body>
+        <section class="section-2" data-color="white black">
+
+        <!-- Sidebar -->
+        <div class="menu">
+            <p><a href="index.html">Home</a></p>
+            <p><a href="projects.html">Projects</a></p>
+            <p><a href="music.html"> Music</a></p>
+            <p><a href="links.html"> Other Links</a></p>
+        </div>
+        <div class="menu__toggler">
+            <span></span>
+        </div>
+        <!--  -->
+        <div class="tabs">
+            <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
+            <label for="tab1" class="tabs__label">Education</label>
+            <div class="tabs__content">
+              CONTENT for Tab #1
+            </div>
+            <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
+            <label for="tab2" class="tabs__label">Relevant Coursework</label>
+            <div class="tabs__content">
+              CONTENT for Tab #2
+            </div>
+            <input type="radio" class="tabs__radio" name="tabs-example" id="tab3">
+            <label for="tab3" class="tabs__label">Experience</label>
+            <div class="tabs__content">
+              CONTENT for Tab #3
+            </div>
+          </div>
+          
+    
+        <!-- <h2>Resume:</h2>
+        <object id="pdfObject" data="Resume.pdf" type="application/pdf" width="70%" height="500px">
+            <p>Unable to display PDF file. <a href="Resume.pdf">Download</a> instead.</p>
+        </object> -->
+
+        </section>
+
+        <!-- Scripts -->
+        <script src="sidebar.js"></script>
+        <script src="gsap.min.js"></script>
+        <script src="ScrollTrigger.min.js"></script>
+        <script src="indexpage.js"></script>
+    </body>
+</html>

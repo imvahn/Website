@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Projects
+        </title>
+        <link rel="stylesheet" href="sidebar.css">
+        <link rel="stylesheet" href="tabs.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <div class="menu">
+            <p><a href="index.html">Home</a></p>
+            <p><a href="projects.html">Projects</a></p>
+            <p><a href="music.html"> Music</a></p>
+            <p><a href="links.html"> Other Links</a></p>
+        </div>
+        <div class="menu__toggler">
+            <span></span>
+        </div>
+        <!--  -->
+
+         <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Platformer')" id="defaultOpen">Platformer</button>
+            <button class="tablinks" onclick="openCity(event, 'Chess')">Chess</button>
+        </div>
+        
+        <!-- Tab content -->
+        <div id="Platformer" class="tabcontent">
+            <h3>Music Time</h3>
+            <p>Music Time is a music based platformer where the player toggles between different instruments to change the level design and mechanics.</p>
+            <iframe width="552" height="167" frameborder="0" src="https://itch.io/embed/2349148"><a href="https://bloodofeden.itch.io/music-time">Music Time by bloodofeden</a></iframe>
+            <p>This was a group project completed in three weeks. I created all the music from screatch. I also created the player and level transition animations, level design and mechanics, juice (parallax, decorations, etc).</p>
+        </div>
+        
+        <div id="Chess" class="tabcontent">
+            <h3>Chess Data Visualizations</h3>
+            <p>These are five chess visualizations comparing various factors such as move count, board position, and ELO between my chess games and chess games played by Grandmaster Hikaru Nakamura on the chess.com site from February to April 2023. To run these visualizations you must have RStudio installed.</p>
+            <object data="Chess.R" type="application/pdf" width="100%" height="500px">
+                <p>Unable to display PDF file. <a href="Resume.pdf">Download</a> instead.</p>
+            </object>
+        </div>
+
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+        <script src="tabs.js"></script>
+        <script src="sidebar.js"></script>
+        
+    </body>
+</html>

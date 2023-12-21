@@ -1,0 +1,22 @@
+html{
+        background: white;
+        font-family: Arial, sans-serif;
+}
+
+a {
+        text-decoration: none;
+        color: black;
+        /* Change color to your preference */
+}
+
+/* Change link color on hover */
+a:hover {
+        color: black;
+        /* Change color on hover */
+}
+
+/* Change link color when visited */
+a:visited {
+        color: black;
+        /* Change color for visited links */
+}
