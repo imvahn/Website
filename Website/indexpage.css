@@ -17,10 +17,12 @@ section {
 }
 
 .text-container {
-    text-align: center; /* Centers the text horizontally */
+    text-align: center;
+    /* Centers the text horizontally */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the items vertically */
+    align-items: center;
+    /* Centers the items vertically */
 }
 
 .slider {
@@ -33,4 +35,58 @@ section {
     max-width: 1200;
     width: 100%;
     margin: auto;
+}
+
+/* Styling for the main container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for the container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    /* Adjust width as needed */
+    margin: 0 auto;
+    /* Centering the container */
+}
+
+/* Styling for the left side */
+.left {
+    text-align: right;
+    padding-right: 4%;
+    font-size: 32px;
+    /* Adjust spacing as needed */
+}
+
+/* Styling for the vertical line */
+.vertical-line {
+    border-left: 0.15vw solid black;
+    /* Change color and thickness as needed */
+    height: 50vh;
+    /* Adjust the length of the line */
+    margin-left: 1%;
+    /* Adjust spacing from the text */
+}
+
+/* Styling for the right side */
+.right {
+    width: calc(45% - 3%);
+    /* Adjust width of the right side */
+}
+
+/* Styling for the bullet points */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 2%;
+    /* Adjust spacing between bullet points */
 }

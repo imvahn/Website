@@ -69,13 +69,14 @@
     /* Changed to position on the right */
     z-index: 998;
     color: black;
-    width: 30%; /* Width of the menu */
+    width: 30%;
+    /* Width of the menu */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: right;
-    transition: 500ms right cubic-bezier(0.77, 0, 0.175, 1); 
+    transition: 500ms right cubic-bezier(0.77, 0, 0.175, 1);
 
     @media only screen {
         width: 25%;
@@ -89,7 +90,7 @@
         /* Changed to position on the right */
     }
 
-    p {
+    .items {
         font-size: 1.4rem;
         line-height: 7.5rem;
         margin-bottom: 1rem;
