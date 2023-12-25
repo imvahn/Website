@@ -14,6 +14,17 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+}
+
+.section-2 {
+    height: 80vh;
+    align-items: bottom;
+}
+
+.section-3 {
+    height: 80vh;
+    align-items: top;
 }
 
 .text-container {
@@ -37,29 +48,40 @@ section {
     margin: auto;
 }
 
-/* Styling for the main container */
-.main-container {
+/* Styling for the container */
+.education {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-/* Styling for the container */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
+    width: 150%;
     /* Adjust width as needed */
     margin: 0 auto;
     /* Centering the container */
+    position: relative;
+    /* Establish relative positioning */
+    left: -20%;
+    /* Adjust the amount to move the content left */
+}
+
+/* Styling for the container */
+.coursework {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150%;
+    /* Adjust width as needed */
+    margin: 0 auto;
+    /* Centering the container */
+    position: relative;
+    /* Establish relative positioning */
+    left: -5%;
+    /* Adjust the amount to move the content left */
 }
 
 /* Styling for the left side */
 .left {
     text-align: right;
-    padding-right: 4%;
+    padding-right: 15%;
     font-size: 32px;
     /* Adjust spacing as needed */
 }
@@ -76,7 +98,8 @@ section {
 
 /* Styling for the right side */
 .right {
-    width: calc(45% - 3%);
+    width: 100%;
+    padding-left: 15%;
     /* Adjust width of the right side */
 }
 
@@ -89,4 +112,19 @@ ul {
 li {
     margin-bottom: 2%;
     /* Adjust spacing between bullet points */
+}
+
+.card {
+    background: white;
+    border-radius: 1rem;
+    padding: 0;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 150ms;
+    margin: 0;
+}
+
+.card.show {
+    transform: translateX(0);
+    opacity: 1;
 }

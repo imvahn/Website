@@ -1,73 +1,69 @@
-<link rel="stylesheet" href="arrow.css">
-<link rel="stylesheet" href="prettify.min.css">
 <link rel="stylesheet" href="test.css">
 
-<div class="description">
-  <div>
-    <h1>Horizontal "<code>containerAnimation</code>"</h1>
-    <p>Scroll this page vertically and you'll see a horizontal fake-scrolling section where a container is animated on
-      the x-axis using a ScrollTrigger animation. With <code>containerAnimation</code> you can trigger animations when
-      certain elements <i>inside</i> that container enter the viewport horizontally! It's like a ScrollTrigger inside of
-      a ScrollTrigger. 🤯
-    </p>
-  </div>
-  <div class="scroll-down">Scroll down<div class="arrow"></div>
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="panel blue">
-    Scroll down to animate horizontally &gt;
-  </div>
-
-  <section class="panel red">
-    <div>
-      <pre class="code-block prettyprint lang-js linenums">gsap.to(".box-1", {
-  y: -130,
-  duration: 2,
-  ease: "elastic",
-  scrollTrigger: {
-    trigger: ".box-1",
-    containerAnimation: scrollTween,
-    start: "left center",
-    toggleActions: "play none none reset"
-  }
-});</pre>
-      Fire an animation at a particular spot...
-    </div>
-    <div class="box-1 box">box-1</div>
-  </section>
-
-  <div class="final">
-    <div>
-      <h1>Wasn't that fun?</h1>
-      <p>Here are a few caveats to keep in mind:</p>
-      <ul>
-        <li>The fake-scrolling animation (just the part that's moving the container horizontally) must have no easing
-          (<code>ease: "none"</code>).</li>
-        <li>Pinning and snapping won't work on ScrollTriggers with a <code>containerAnimation</code>.</li>
-        <li>The mapping of scroll position trigger points are based on the trigger element itself not being animated
-          horizontally (inside the container). If you need to animate the trigger, you can either wrap it in a
-          &lt;div&gt;
-          and use that as the trigger instead or just factor the trigger's movement into your end position. For example,
-          if you animate it left 100px, make the <code>end</code> 100px further to the left.</li>
-        <li>Requires ScrollTrigger 3.8.0 or later</li>
-      </ul>
+<section class-="section-1" data="white black">
+  <div class="card-container">
+    <div class="card">
+      <div class="container">
+        <div class="left">
+          <h2>RELEVANT COURSEWORK</h2>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="right">
+          <ul>
+            <li>Special Topics in Computer Science: High Performance Scientific Computing</li>
+            <li>Design of Programming Languages</li>
+            <li>Computer Networks</li>
+            <li>Game Design and Development: Programming and Practice</li>
+            <li>Data Visualization I</li>
+            <li>Discrete Math</li>
+            <li>Multivariable Calculus</li>
+            <br>
+            <li>Seminar for Music Majors: Music, Politics, and Culture</li>
+            <li>Music in Outer Space</li>
+            <li>20th Century Composition Techniques</li>
+            <li>Theory and Analysis</li>
+            <li>Sound Systems and Psychoacoustics</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+<section class="section-2" data="white black">
+  <div class="card-container">
+    <div class="card">
+      <div class="container">
+        <div class="left">
+          <h2>EDUCATION</h2>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="right">
+          <ul>
+            <li>
+              <strong style="font-size: 24px;">WESLEYAN UNIVERSITY </strong><span style="font-size: 10px;">2021
+                - 2025</span><br>
+              <span style="font-size: 18px;">Degree:</span> Bachelors of Arts<br>
+              <span style="font-size: 18px;">Majors:</span> Computer Science, Mathematics,
+              Music<br>
+              <span style="font-size: 18px;">GPA:</span> 3.7
+            </li>
+            <li>
+              <strong style="font-size: 24px;">THE JUILLIARD SCHOOL </strong><span style="font-size: 10px;">2018
+                - 2021</span><br>
+              <span style="font-size: 18px;">Major:</span> Guitar Performance<br>
+              <span style="font-size: 18px;">GPA:</span> A
+            </li>
+            <li>
+              <strong style="font-size: 24px;">WESTON HIGH SCHOOL </strong><span style="font-size: 10px;">2017
+                - 2021</span><br>
+              <span style="font-size: 18px;">GPA:</span> 4.02
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
-  <header>
-    <a href="https://greensock.com/scrolltrigger">
-      <img class="greensock-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg"
-        width="200" height="64" />
-    </a>
-  </header>
-
-  <script src="gsap-latest-beta.min.js"></script>
-  <script src="ScrollTrigger.min.js"></script>
-  <script src="arrow.js"></script>
-  <script src="run_prettify.js"></script>
-  <script src="test.js"></script>
+<script src="test.js"></script>
+<script src="sidescroll.js"></script>
