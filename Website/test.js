@@ -1,10 +1,20 @@
-ScrollReveal({
-    reset: true,
-    distance: '60px',
-    duration: 2500,
-    delay: 400
+// Create the cursor element outside of section-01
+const cursor = document.createElement("div");
+cursor.classList.add("circle");
+document.body.appendChild(cursor);
+
+// Function to update cursor position
+function getDimensions(e) {
+    cursor.style.top = `${e.clientY - 25}px`; // -25px for the size of the circle
+    cursor.style.left = `${e.clientX - 25}px`;
+}
+
+// Add mousemove event listener to the entire document
+document.addEventListener("mousemove", (e) => {
+    getDimensions(e);
 });
 
-ScrollReveal().reveal('.section-title', { delay: 300, origin: 'left', interval: 1000 });
-ScrollReveal().reveal('.info-title', { delay: 400, origin: 'left', interval: 200 });
-ScrollReveal().reveal('.info', { delay: 500, origin: 'bottom', interval: 200 });
+// Add scroll event listener to update the cursor position
+window.addEventListener("scroll", (e) => {
+    getDimensions(e);
+});
