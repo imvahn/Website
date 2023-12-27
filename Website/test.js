@@ -1,37 +1,10 @@
-const cards = document.querySelectorAll(".card")
+ScrollReveal({
+    reset: true,
+    distance: '60px',
+    duration: 2500,
+    delay: 400
+});
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry) => {
-        entry.target.classList.toggle('show', entry.isIntersecting);
-    })
-},
-    {
-        threshold: 1,
-    }
-)
-
-const lastCardObserver = new IntersectionObserver(entries => {
-    const lastCard = entries[0]
-    if (!lastCard.isIntersecting) return
-    loadNewCards()
-    lastCardObserver.unobserve(lastCard.target)
-    lastCardObserver.observe(document.querySelector(".card:last-child"))
-}, {
-    rootMargin: "100px"
-})
-
-lastCardObserver.observe(document.querySelector(".card:last-child"))
-
-cards.forEach(card => {
-    observer.observe(card)
-})
-
-function loadNewCards() {
-    for (let i = 0; i < 10; i++) {
-        const card = document.createElement("div")
-        card.textContent = "New Card"
-        card.classList.add("card")
-        observer.observe(card)
-        cardContainer.append(card)
-    }
-}
+ScrollReveal().reveal('.section-title', { delay: 500, origin: 'left' });
+ScrollReveal().reveal('.info-title', { delay: 600, origin: 'left', interval: 200 });
+ScrollReveal().reveal('.info', { delay: 700, origin: 'bottom', interval: 200 });

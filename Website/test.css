@@ -1,62 +1,80 @@
-.card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-    align-items: flex-start;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card {
-    background: white;
-    border-radius: .25rem;
-    padding: .5rem;
-    transform: translateX(100px);
-    opacity: 0;
-    transition: 150ms;
-}
-
-.card.show {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-/* Styling for the container */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    /* Adjust width as needed */
-    margin: 0 auto;
-    /* Centering the container */
-}
-
-/* Styling for the left side */
-.left {
-    text-align: right;
-    padding-right: 4%;
-    font-size: 32px;
-    /* Adjust spacing as needed */
-}
-
-/* Styling for the vertical line */
-.vertical-line {
-    border-left: 0.15vw solid black;
-    /* Change color and thickness as needed */
-    height: 50vh;
-    /* Adjust the length of the line */
-    margin-left: 1%;
-    /* Adjust spacing from the text */
-}
-
-/* Styling for the right side */
-.right {
-    width: calc(45% - 3%);
-    /* Adjust width of the right side */
+body {
+    background: #111222;
 }
 
 section {
-    height: 100vh;
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+}
+
+.content .image {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.content .image img {
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 3em;
+}
+
+.info-title {
+    font-size: 1.8em;
+}
+
+.info-title small {
+    font-size: 10px;
+}
+
+.info {
+    width: 100%;
+    margin-left: 3%;
+}
+
+/* Styling for the bullet points */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 2%;
+    /* Adjust spacing between bullet points */
 }
