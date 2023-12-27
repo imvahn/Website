@@ -5,6 +5,6 @@ ScrollReveal({
     delay: 400
 });
 
-ScrollReveal().reveal('.section-title', { delay: 500, origin: 'left' });
-ScrollReveal().reveal('.info-title', { delay: 600, origin: 'left', interval: 200 });
-ScrollReveal().reveal('.info', { delay: 700, origin: 'bottom', interval: 200 });
+ScrollReveal().reveal('.section-title', { delay: 300, origin: 'left', interval: 1000 });
+ScrollReveal().reveal('.info-title', { delay: 400, origin: 'left', interval: 200 });
+ScrollReveal().reveal('.info', { delay: 500, origin: 'bottom', interval: 200 });
