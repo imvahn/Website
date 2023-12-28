@@ -1,0 +1,13 @@
+name: SecondVisualization
+title: SecondVisualization
+username: vahn
+account: vahn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10850443
+bundleId: 8088271
+url: https://vahn.shinyapps.io/SecondVisualization/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 1.R|4.R|5.R

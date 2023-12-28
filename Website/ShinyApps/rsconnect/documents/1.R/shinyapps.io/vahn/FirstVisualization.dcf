@@ -1,0 +1,13 @@
+name: FirstVisualization
+title: FirstVisualization
+username: vahn
+account: vahn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10850433
+bundleId: 8088258
+url: https://vahn.shinyapps.io/FirstVisualization/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 2.R|4.R|5.R

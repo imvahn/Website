@@ -1,0 +1,47 @@
+section {
+    height: 1500px;
+}
+
+.visualization {
+    width: 50%;
+    height: 100%;
+    float: right;
+    background-color: lightblue;
+}
+
+.text {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: lightgreen;
+}
+
+.code-container {
+    max-height: 300px;
+    overflow-y: auto;
+    /* Enable vertical scrollbar */
+}
+
+.visualization-1 {
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+}
+
+.visualization-2 {
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+}
+
+.visualization-4 {
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+}
+
+.visualization-5 {
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+}
