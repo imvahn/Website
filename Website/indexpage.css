@@ -24,10 +24,10 @@ section {
 
 .section-2,
 .section-3 {
-    height: 40vh;
+    height: 500px;
     justify-content: left;
     align-items: top;
-    margin-bottom: 5%;
+    margin-bottom: 50px;
 }
 
 .text-container {

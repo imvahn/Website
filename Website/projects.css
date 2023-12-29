@@ -1,47 +1,54 @@
 section {
-    height: 1500px;
+    height: 1000px;
+    margin: 5px;
+    position: relative;
 }
 
 .visualization {
     width: 50%;
     height: 100%;
     float: right;
-    background-color: lightblue;
+    background-color: white;
 }
 
 .text {
     width: 50%;
     height: 100%;
     float: left;
-    background-color: lightgreen;
+    background-color: white;
+}
+
+.text p {
+    margin: 2px;
+}
+
+.title {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: .5em;
+    margin-top: .5em;
 }
 
 .code-container {
-    max-height: 300px;
+    max-height: 25%;
+    width: 50%;
     overflow-y: auto;
-    /* Enable vertical scrollbar */
+    border: 1px solid #ccc;
+    /* Adding a 1px solid border */
+    border-radius: 8px;
+    /* Rounding the corners */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adding a drop shadow */
+    position: absolute;
+    bottom: 0;
 }
 
-.visualization-1 {
-    width: 400px;
-    height: 400px;
+.visualization-area {
+    width: 100%;
+    height: 70%;
     background-color: gray;
 }
 
-.visualization-2 {
-    width: 400px;
-    height: 400px;
-    background-color: gray;
-}
-
-.visualization-4 {
-    width: 400px;
-    height: 400px;
-    background-color: gray;
-}
-
-.visualization-5 {
-    width: 400px;
-    height: 400px;
-    background-color: gray;
+a.underline {
+    text-decoration: underline;
 }

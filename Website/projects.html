@@ -2,80 +2,81 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        Projects
-    </title>
-    <link rel="stylesheet" href="sidebar.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="projects.css">
-    <link rel="stylesheet" href="prism.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Projects
+  </title>
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="prism.css">
 
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="menu">
-        <span class="items">
-            <a href="index.html">HOME</a>
-            <span class="btn btn-border-underline"></span>
-        </span>
-        <span class="items">
-            <a href="projects.html">PROJECTS</a>
-            <span class="btn btn-border-underline"></span>
-        </span>
-        <span class="items">
-            <a href="music.html">MUSIC</a>
-            <span class="btn btn-border-underline"></span>
-        </span>
-        <span class="items">
-            <a href="links.html">LINKS</a>
-            <span class="btn btn-border-underline"></span>
-        </span>
-    </div>
-    <div class="menu__toggler">
-        <span></span>
-    </div>
-    <!--  -->
-    <p>
-        In February of this year, my roommate insisted that I download the chess.com app and play him in chess. And ever
-        since, I've been hooked. My problem is that I'm terrible at chess. And it's largely because I've refused to
-        learn any chess theory or strategies. Why? Because I'm stubborn. I'm no prodigy—not even close—but I figured if
-        eight-year-olds can make it to world chess championships, my college brain and crippling chess.com app addiction
-        should be just enough to improve somewhat over a few months.
-        <br><br>
-        I was wrong. It is months later and I am still unbelievably bad at chess. However, my ego-fueled and naïve
-        approach to playing chess has one benefit: I'm the perfect control group! Who else would play chess for hours a
-        week and months on end without attempting to learn anything? I am as far removed as one can be from the best
-        chess players in the world while still having a comprehensive understanding of the game. In this project, I
-        attempt to analyze my games through several different factors such as move count, board position, and elo. These
-        factors will be explained in greater depth throughout the visualizations. I also analyze every game played in
-        three different time classes: bullet, blitz, and rapid. A time class indicates the amount of time allotted to
-        each player in a game. The time for each respective player counts down when it is their turn, and pauses when it
-        is their opponent's turn. Bullet games allot 1-2 minutes for each player, blitz games allot 3-5 minutes for each
-        player, and rapid games allot 5-15 minutes for each player. This results in 4 minute, 10 minute, and 30 minute
-        games. The time class has a significant impact on one's gameplay. Less time on the clock means less time to
-        think of potential moves and how the opponent will respond, and more opportunities for mistakes and irregular
-        outcomes. Because move accuracy can be so different in the different time classes, it is both necessary and
-        entertaining to compare games based on their time class. It is worth noting that the majority of my games played
-        on chess.com are blitz games, so the data of my blitz games is the least susceptible to outliers.
-        <br><br>
-        A crucial part of my analysis is how my games compares to games played by
-        Hikaru Nakamura, an American chess grandmaster and world champion in several tournaments. One of the most
-        striking aspects of his gameplay is how accurate he is. In chess, accuracy refers to how closely a player
-        compares to a chess engine, a machine-learning program that determines the 'best' move options. Hikaru averages
-        80% to 90% accuracy in his games, with a significant portion in the 95%-99% range. This is staggering. It means
-        that he is choosing almost exclusively perfect moves in every game. Hikaru's gameplay is as close to a computer
-        as possible. Thus, by comparing my games with Hikaru's, I am comparing two extremes. How does untrained, naïve
-        gameplay compare to some of the most statistically accurate gameplay in the world? Just how bad am I? In these
-        past three months, have I improved at all? We'll see what my analysis yields.
-    </p>
-    <section class="section-1">
-        <div class="visualization">
-            <div class="visualization-1"></div>
-            <div class="code-container">
-                <pre>
+  <!-- Sidebar -->
+  <div class="menu">
+    <span class="items">
+      <a href="index.html">HOME</a>
+      <span class="btn btn-border-underline"></span>
+    </span>
+    <span class="items">
+      <a href="projects.html">PROJECTS</a>
+      <span class="btn btn-border-underline"></span>
+    </span>
+    <span class="items">
+      <a href="music.html">MUSIC</a>
+      <span class="btn btn-border-underline"></span>
+    </span>
+    <span class="items">
+      <a href="links.html">LINKS</a>
+      <span class="btn btn-border-underline"></span>
+    </span>
+  </div>
+  <div class="menu__toggler">
+    <span></span>
+  </div>
+  <!--  -->
+  <p>
+    In February of this year, my roommate insisted that I download the chess.com app and play him in chess. And ever
+    since, I've been hooked. My problem is that I'm terrible at chess. And it's largely because I've refused to
+    learn any chess theory or strategies. Why? Because I'm stubborn. I'm no prodigy—not even close—but I figured if
+    eight-year-olds can make it to world chess championships, my college brain and crippling chess.com app addiction
+    should be just enough to improve somewhat over a few months.
+    <br><br>
+    I was wrong. It is months later and I am still unbelievably bad at chess. However, my ego-fueled and naïve
+    approach to playing chess has one benefit: I'm the perfect control group! Who else would play chess for hours a
+    week and months on end without attempting to learn anything? I am as far removed as one can be from the best
+    chess players in the world while still having a comprehensive understanding of the game. In this project, I
+    attempt to analyze my games through several different factors such as move count, board position, and elo. These
+    factors will be explained in greater depth throughout the visualizations. I also analyze every game played in
+    three different time classes: bullet, blitz, and rapid. A time class indicates the amount of time allotted to
+    each player in a game. The time for each respective player counts down when it is their turn, and pauses when it
+    is their opponent's turn. Bullet games allot 1-2 minutes for each player, blitz games allot 3-5 minutes for each
+    player, and rapid games allot 5-15 minutes for each player. This results in 4 minute, 10 minute, and 30 minute
+    games. The time class has a significant impact on one's gameplay. Less time on the clock means less time to
+    think of potential moves and how the opponent will respond, and more opportunities for mistakes and irregular
+    outcomes. Because move accuracy can be so different in the different time classes, it is both necessary and
+    entertaining to compare games based on their time class. It is worth noting that the majority of my games played
+    on chess.com are blitz games, so the data of my blitz games is the least susceptible to outliers.
+    <br><br>
+    A crucial part of my analysis is how my games compares to games played by
+    Hikaru Nakamura, an American chess grandmaster and world champion in several tournaments. One of the most
+    striking aspects of his gameplay is how accurate he is. In chess, accuracy refers to how closely a player
+    compares to a chess engine, a machine-learning program that determines the 'best' move options. Hikaru averages
+    80% to 90% accuracy in his games, with a significant portion in the 95%-99% range. This is staggering. It means
+    that he is choosing almost exclusively perfect moves in every game. Hikaru's gameplay is as close to a computer
+    as possible. Thus, by comparing my games with Hikaru's, I am comparing two extremes. How does untrained, naïve
+    gameplay compare to some of the most statistically accurate gameplay in the world? Just how bad am I? In these
+    past three months, have I improved at all? We'll see what my analysis yields.
+  </p>
+  <div class="title">VISUALIZATION 1</div>
+  <section class="section-1">
+    <div class="visualization">
+      <div class="visualization-area"></div>
+      <div class="code-container">
+        <pre>
                     <code class="language-r">
 chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
 chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
@@ -138,73 +139,74 @@ server<-function(input,output){
 shinyApp(ui = ui, server = server)
                     </code>
                 </pre>
-            </div>
-        </div>
-        <div class="text">
-            <p>
-                These first visualizations focus on the number of moves in games played by myself and Hikaru. There is a
-                lot
-                of information that can be revealed by the
-                number of moves in a game. Every chess game has three stages: an opening, a
-                midgame, and an endgame. The opening can last up to 20 moves, but as few as
-                10. The midgame doesn't really have a set move amount because the endgame begins
-                once most pieces have been removed from the board, which can happen after
-                30 moves, 60 moves, or even after 120 moves. Keeping this in mind, the number
-                of moves in a game tells a story of how the game plays out. A game with a short
-                number of moves means that it ended quickly and decisively; this could be from a
-                gap appearing in a player's defenses that was taken advantage of. By the midgame, the board could be in
-                one of nearly infinite
-                positions, so games that end in the midgame are often the result of a carefully prepared attack. By the
-                endgame, nearly every piece has been removed from the board. Players rely on specific endgame tactics
-                and strategies to account for this lack of pieces. The number of moves in a game can indicate
-                substantially different outcomes.
-                When accounting for time classes, especially games that only give each player
-                1-2 total minutes, many games can end simply because a player runs out of time,
-                not because they got checkmated.
-                <br><br>
-                The first visualization looks at the distribution of moves in games that I won
-                and in games that Hikaru won. The distribution accounts for the color of
-                Hikaru's and my pieces. Because white goes first, the player who plays white
-                always has a slight advantage. This becomes evident in the visualization.
-                <br><br>
-                Across all the time classes, I won more games in fewer moves as white than as
-                black. This makes sense because of white's first-move advantage. As a chess
-                game continues, the advantage from starting as white becomes less and less
-                impactful. This statement is supported through looking at my bullet games.
-                Because games are so quick, white's advantage is maximized. It makes sense
-                that the majority of my bullet games as white are won in a very small number
-                of moves. Interestingly, my bullet move distribution is tri-modal for both
-                black and white. The high density of wins at ~50 and ~70 moves in bullet
-                tells its own story: by the time the game has reached that many moves, players
-                have only a few seconds left on their clock. This means that wins are determined
-                by who can stall longer, forcing their opponent out of time. In bullet games,
-                white's wins are determined by how effectively they can attack, whereas black's
-                wins are determined by how effectively they defend.
-                <br><br>
-                Hikaru's data is less irregular than mine. The distributions of the number of
-                moves in Hikaru's games are pretty consistent between colors. In general, his
-                games are won regardless of starting color. This makes sense, because his
-                gameplay is essentially perfect. When you're making the most accurate moves,
-                starting advantages don't have much of an impact. That's part of the beauty of
-                chess: handicaps imposed by the mechanics of the game can be overcome by pure
-                skill. This also explains why the distributions of the number of moves are
-                more similar in longer time classes. With more time to think, one has more time
-                to come up with the best move. And, as Hikaru demonstrates, starting advantages
-                can be overcome with accurate gameplay.
-                <br><br>
-                Why are my distributions so much less consistent and so much funkier-looking
-                than Hikaru's? Well, put simply, I'm much much much much much much worse. My games are determined more
-                by
-                luck than skill. It makes sense that my
-                distributions are irregular, because my gameplay is irregular!
-            </p>
-        </div>
-    </section>
-    <section class="section-02">
-        <div class="visualization">
-            <div class="visualization-2"></div>
-            <div class="code-container">
-                <pre>
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        This first visualization focuses on the number of moves in games played by myself and Hikaru. There is a
+        lot
+        of information that can be revealed by the
+        number of moves in a game. Every chess game has three stages: an opening, a
+        midgame, and an endgame. The opening can last up to 20 moves, but as few as
+        10. The midgame doesn't really have a set move amount because the endgame begins
+        once most pieces have been removed from the board, which can happen after
+        30 moves, 60 moves, or even after 120 moves. Keeping this in mind, the number
+        of moves in a game tells a story of how the game plays out. A game with a short
+        number of moves means that it ended quickly and decisively; this could be from a
+        gap appearing in a player's defenses that was taken advantage of. By the midgame, the board could be in
+        one of nearly infinite
+        positions, so games that end in the midgame are often the result of a carefully prepared attack. By the
+        endgame, nearly every piece has been removed from the board. Players rely on specific endgame tactics
+        and strategies to account for this lack of pieces. The number of moves in a game can indicate
+        substantially different outcomes.
+        When accounting for time classes, especially games that only give each player
+        1-2 total minutes, many games can end simply because a player runs out of time,
+        not because they got checkmated.
+        <br><br>
+        The first visualization looks at the distribution of moves in games that I won
+        and in games that Hikaru won. The distribution accounts for the color of
+        Hikaru's and my pieces. Because white goes first, the player who plays white
+        always has a slight advantage. This becomes evident in the visualization.
+        <br><br>
+        Across all the time classes, I won more games in fewer moves as white than as
+        black. This makes sense because of white's first-move advantage. As a chess
+        game continues, the advantage from starting as white becomes less and less
+        impactful. This statement is supported through looking at my bullet games.
+        Because games are so quick, white's advantage is maximized. It makes sense
+        that the majority of my bullet games as white are won in a very small number
+        of moves. Interestingly, my bullet move distribution is tri-modal for both
+        black and white. The high density of wins at ~50 and ~70 moves in bullet
+        tells its own story: by the time the game has reached that many moves, players
+        have only a few seconds left on their clock. This means that wins are determined
+        by who can stall longer, forcing their opponent out of time. In bullet games,
+        white's wins are determined by how effectively they can attack, whereas black's
+        wins are determined by how effectively they defend.
+        <br><br>
+        Hikaru's data is less irregular than mine. The distributions of the number of
+        moves in Hikaru's games are pretty consistent between colors. In general, his
+        games are won regardless of starting color. This makes sense, because his
+        gameplay is essentially perfect. When you're making the most accurate moves,
+        starting advantages don't have much of an impact. That's part of the beauty of
+        chess: handicaps imposed by the mechanics of the game can be overcome by pure
+        skill. This also explains why the distributions of the number of moves are
+        more similar in longer time classes. With more time to think, one has more time
+        to come up with the best move. And, as Hikaru demonstrates, starting advantages
+        can be overcome with accurate gameplay.
+        <br><br>
+        Why are my distributions so much less consistent and so much funkier-looking
+        than Hikaru's? Well, put simply, I'm much much much much much much worse. My games are determined more
+        by
+        luck than skill. It makes sense that my
+        distributions are irregular, because my gameplay is irregular!
+      </p>
+    </div>
+  </section>
+  <div class="title">VISUALIZATION 2</div>
+  <section class="section-02">
+    <div class="visualization">
+      <div class="visualization-area"></div>
+      <div class="code-container">
+        <pre>
                     <code class="language-r">
 chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
 chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
@@ -271,81 +273,82 @@ server<-function(input,output){
 shinyApp(ui=ui, server=server)
                     </code>
                 </pre>
-            </div>
-        </div>
-        <div class="text">
-            <p>
-                This visualization looks at game outcomes (win, loss, or draw) to find out how the number of moves in a
-                game changes depending on how the game ends.
-                <br><br>
-                These distributions are very interesting. First, it's worth noting that games
-                ending in a draw have a much lower density than those ending in a win or a loss.
-                This makes sense, because most games are won or lost, not drawn.
-                <br><br>
-                The distributions of the number of moves in my blitz games point out a flaw in my
-                capabilities as a player. Most of my drawn games happened at ~75 moves, while
-                my won and lost games happened at ~20. This indicates that I struggle heavily
-                in endgame positions. In the endgame, when there are fewer pieces on the board,
-                it is much easier to draw a game. There are multiple reasons why this is the
-                case:
-                <br><br>
-                1. The fifty move rule.
-                <br>
-                This rule states that "a player can claim a draw if no
-                capture has been made and no pawn has been moved in the last fifty moves."
-                During the endgame, it is entirely possible that there are no pawns left on the
-                board, eliminating the second clause of the rule. It is also easier to dodge
-                capture, because there is more space on the board to move. Without any pieces in
-                the way, players can run across the board, dodging attacks. It is harder to get
-                pinned or trapped in one spot and captured. Because I am not good in endgame
-                positions, I often struggle to effectively capture pieces before fifty moves
-                have passed.
-                <br><br>
-                2. Stalemate.
-                <br>
-                A stalemate occurs when a player cannot move any more pieces.
-                <br><br>
-                3. Time.
-                <br>
-                In bullet and blitz games, time is a crucial factor. By the time
-                players have reached the endgame, there are seconds left on the clock. This
-                leaves more opportunities for mistakes. When I am low on time, my thoughts
-                change from "how do I win" to "how do I not run out of time first." This
-                gives my opponent an opportunity to stall with the fifty move rule. It
-                also means that I'm putting less thought into my moves. Less thought means
-                more mistakes, such as an accidental stalemate or a failure to capture a piece
-                in fifty moves.
-                <br><br>
-                Hikaru's draws, by comparison, happen at around the same number of moves as his
-                wins and losses. This is because he is much better than me. Chess grandmasters
-                operate on a different plane of existence: they have played so many games and
-                have had so much practice that they can predict tens of moves in advance. Thus,
-                time is not nearly as much of an issue for Hikaru as it is for me. However,
-                Hikaru's blitz distribution is slightly bimodal, with the second hump at ~125
-                moves. Chess.com matches players by their skill level. In Hikaru's case, he
-                is playing individuals who are experts at stalling and dodging his attacks.
-                Thus, he can fall victim to the fifty move rule or to a stalemate, or, in rare
-                cases, by running out of time. These occurences are rare, though, which is why
-                the second hump is barely visible. Hikaru's bullet distribution is significantly
-                bimodal. The first hump lines up with his wins and losses, but the second one
-                occurs at ~75 moves. Because bullet games are half the length as blitz games,
-                time is a much more consequential factor—there are more opportunities to mess up.
-                <br><br>
-                The distribution of the number of moves in my won bullet games is trimodal,
-                which, although weird, makes sense given the context of the first visualization.
-                The distribution of the number of moves in my rapid games is ridiculous. This
-                is because I have only played 32 rapid games, with 3 draws. Thus, the 3 draws
-                are very evident.
-            </p>
-        </div>
-    </section>
-    <section class="section-03">
-        <div class="visualization">
-            <object id="pdfObject" data="Visualization 3.pdf" type="application/pdf" width="100%" height="300px">
-                <p>Unable to display PDF file. <a href="Visualization 3.pdf">Download</a> instead.</p>
-            </object>
-            <div class="code-container">
-                <pre>
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        This visualization looks at game outcomes (win, loss, or draw) to find out how the number of moves in a
+        game changes depending on how the game ends.
+        <br><br>
+        These distributions are very interesting. First, it's worth noting that games
+        ending in a draw have a much lower density than those ending in a win or a loss.
+        This makes sense, because most games are won or lost, not drawn.
+        <br><br>
+        The distributions of the number of moves in my blitz games point out a flaw in my
+        capabilities as a player. Most of my drawn games happened at ~75 moves, while
+        my won and lost games happened at ~20. This indicates that I struggle heavily
+        in endgame positions. In the endgame, when there are fewer pieces on the board,
+        it is much easier to draw a game. There are multiple reasons why this is the
+        case:
+        <br><br>
+        1. The fifty move rule.
+        <br>
+        This rule states that "a player can claim a draw if no
+        capture has been made and no pawn has been moved in the last fifty moves."
+        During the endgame, it is entirely possible that there are no pawns left on the
+        board, eliminating the second clause of the rule. It is also easier to dodge
+        capture, because there is more space on the board to move. Without any pieces in
+        the way, players can run across the board, dodging attacks. It is harder to get
+        pinned or trapped in one spot and captured. Because I am not good in endgame
+        positions, I often struggle to effectively capture pieces before fifty moves
+        have passed.
+        <br><br>
+        2. Stalemate.
+        <br>
+        A stalemate occurs when a player cannot move any more pieces.
+        <br><br>
+        3. Time.
+        <br>
+        In bullet and blitz games, time is a crucial factor. By the time
+        players have reached the endgame, there are seconds left on the clock. This
+        leaves more opportunities for mistakes. When I am low on time, my thoughts
+        change from "how do I win" to "how do I not run out of time first." This
+        gives my opponent an opportunity to stall with the fifty move rule. It
+        also means that I'm putting less thought into my moves. Less thought means
+        more mistakes, such as an accidental stalemate or a failure to capture a piece
+        in fifty moves.
+        <br><br>
+        Hikaru's draws, by comparison, happen at around the same number of moves as his
+        wins and losses. This is because he is much better than me. Chess grandmasters
+        operate on a different plane of existence: they have played so many games and
+        have had so much practice that they can predict tens of moves in advance. Thus,
+        time is not nearly as much of an issue for Hikaru as it is for me. However,
+        Hikaru's blitz distribution is slightly bimodal, with the second hump at ~125
+        moves. Chess.com matches players by their skill level. In Hikaru's case, he
+        is playing individuals who are experts at stalling and dodging his attacks.
+        Thus, he can fall victim to the fifty move rule or to a stalemate, or, in rare
+        cases, by running out of time. These occurences are rare, though, which is why
+        the second hump is barely visible. Hikaru's bullet distribution is significantly
+        bimodal. The first hump lines up with his wins and losses, but the second one
+        occurs at ~75 moves. Because bullet games are half the length as blitz games,
+        time is a much more consequential factor—there are more opportunities to mess up.
+        <br><br>
+        The distribution of the number of moves in my won bullet games is trimodal,
+        which, although weird, makes sense given the context of the first visualization.
+        The distribution of the number of moves in my rapid games is ridiculous. This
+        is because I have only played 32 rapid games, with 3 draws. Thus, the 3 draws
+        are very evident.
+      </p>
+    </div>
+  </section>
+  <div class="title">VISUALIZATION 3</div>
+  <section class="section-03">
+    <div class="visualization">
+      <object id="pdfObject" data="Visualization 3.pdf" type="application/pdf" width="100%" height="70%">
+        <p>Unable to display PDF file. <a href="Visualization 3.pdf">Download</a> instead.</p>
+      </object>
+      <div class="code-container">
+        <pre>
                     <code class="language-r">
 If you want to compare BULLET games where Hikaru and I play as WHITE, run the
 # following lines:
@@ -509,63 +512,64 @@ server<-function(input,output){
 shinyApp(ui=ui,server=server)
                     </code>
                 </pre>
-            </div>
-        </div>
-        <div class="text">
-            <p>
-                The next visualization maps the amount of times pieces were moved to certain
-                positions on the board. It's essentially a 'heat map' of where pieces are placed
-                most often. This required a gigantic amount of data manipulation, to the point
-                where it literally breaks the shiny app. Because of this, I've embedded a PDF of all the visualzation
-                results instead of a shiny app.
-                <br><br>
-                The highest density of pieces in both mine and Hikaru's games happens at the
-                center of the board. This makes sense, because most chess games start by
-                fighting for control over the center of the board. By "control," I mean that
-                whoever is in control over the center has their pieces either on the center
-                squares or attacking the center squares, preventing their opponent from
-                approaching. Control of the center allows for more mobility for your pieces
-                as well as easy access to all parts of the board. Other squares of importance
-                are c3, f3, c6, and f6. In the beginning of a game, knights often move to those
-                squares because they're the only place a knight can move without any other
-                pieces having to be moved first.
-                <br><br>
-                In general, these heatmaps demonstrate Hikaru's mastery of board positioning.
-                In the blitz games, for example, the majority concentration of my pieces is on
-                the center squares and the other four squares mentioned previously. Hikaru's
-                blitz heatmap, on the other hand, displays a significant concentration of
-                moves in the center 6x6 grid of the board, a much larger radius. The likely
-                reason why Hikaru's heatmap displays such greater mobility is because he is
-                familiar with a multitude of opening possibilities. When I play chess, I
-                move my knights to the c3 and f3 (or c6 and f6, depending on the color) squares,
-                push my center pawns forward, and proceed from there. I almost exclusively do
-                this every game because I am most comfortable playing this way. My inexperience
-                in chess means I don't know how to react to attacks if my knights and pawns
-                aren't in a position I'm familiar with, so I put my knights and pawns in the
-                same place every game. Hikaru, on the other hand, is comfortable playing from
-                many different opening positions. He may begin his games by building up from
-                the left side, or the right side, or by doing something else, rather than just
-                going for control of the center of the board.
-                <br><br>
-                My rapid games are interesting because they don't appear to follow any
-                particular pattern. My rapid games as black showcase a diagonal line in the
-                middle of the board, but my rapid games as white don't indicate anything like
-                that. This is because I am more confident in rapid games. Because the timer is
-                longer, I have more time to think about every move. I'm comfortable moving
-                pieces other than my knights and center pawns because I feel like I have enough
-                time to process my opponent's response and calculate the best moves. In bullet
-                and blitz games, where every second counts, I'm more liable to overlooking a
-                move or making a mistake when I face something I'm not used to, because I have
-                less time to think about proper responses. Hikaru's rapid games also follow
-                less of a pattern than his blitz or bullet games.
-            </p>
-        </div>
-    </section>
-    <section class="section-04">
-        <div class="visualization">
-            <div class="visualization-4"></div>
-            <div class="code-container">
-                <pre>
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        The next visualization maps the amount of times pieces were moved to certain
+        positions on the board. It's essentially a 'heat map' of where pieces are placed
+        most often. This required a gigantic amount of data manipulation, to the point
+        where it literally breaks the shiny app. Because of this, I've embedded a PDF of all the visualzation
+        results instead of a shiny app.
+        <br><br>
+        The highest density of pieces in both mine and Hikaru's games happens at the
+        center of the board. This makes sense, because most chess games start by
+        fighting for control over the center of the board. By "control," I mean that
+        whoever is in control over the center has their pieces either on the center
+        squares or attacking the center squares, preventing their opponent from
+        approaching. Control of the center allows for more mobility for your pieces
+        as well as easy access to all parts of the board. Other squares of importance
+        are c3, f3, c6, and f6. In the beginning of a game, knights often move to those
+        squares because they're the only place a knight can move without any other
+        pieces having to be moved first.
+        <br><br>
+        In general, these heatmaps demonstrate Hikaru's mastery of board positioning.
+        In the blitz games, for example, the majority concentration of my pieces is on
+        the center squares and the other four squares mentioned previously. Hikaru's
+        blitz heatmap, on the other hand, displays a significant concentration of
+        moves in the center 6x6 grid of the board, a much larger radius. The likely
+        reason why Hikaru's heatmap displays such greater mobility is because he is
+        familiar with a multitude of opening possibilities. When I play chess, I
+        move my knights to the c3 and f3 (or c6 and f6, depending on the color) squares,
+        push my center pawns forward, and proceed from there. I almost exclusively do
+        this every game because I am most comfortable playing this way. My inexperience
+        in chess means I don't know how to react to attacks if my knights and pawns
+        aren't in a position I'm familiar with, so I put my knights and pawns in the
+        same place every game. Hikaru, on the other hand, is comfortable playing from
+        many different opening positions. He may begin his games by building up from
+        the left side, or the right side, or by doing something else, rather than just
+        going for control of the center of the board.
+        <br><br>
+        My rapid games are interesting because they don't appear to follow any
+        particular pattern. My rapid games as black showcase a diagonal line in the
+        middle of the board, but my rapid games as white don't indicate anything like
+        that. This is because I am more confident in rapid games. Because the timer is
+        longer, I have more time to think about every move. I'm comfortable moving
+        pieces other than my knights and center pawns because I feel like I have enough
+        time to process my opponent's response and calculate the best moves. In bullet
+        and blitz games, where every second counts, I'm more liable to overlooking a
+        move or making a mistake when I face something I'm not used to, because I have
+        less time to think about proper responses. Hikaru's rapid games also follow
+        less of a pattern than his blitz or bullet games.
+      </p>
+    </div>
+  </section>
+  <div class="title">VISUALIZATION 4</div>
+  <section class="section-04">
+    <div class="visualization">
+      <div class="visualization-area"></div>
+      <div class="code-container">
+        <pre>
                     <code class="language-r">
 chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
 chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
@@ -644,43 +648,44 @@ server<-function(input,output){
 shinyApp(ui=ui,server=server)
                     </code>
                 </pre>
-            </div>
-        </div>
-        <div class="text">
-            <p>
-                This visualization maps Elo in a time series from February to the end of
-                April. Elo is a rating system used to calculate the relative skill levels of
-                players in a zero-sum game; that is to say, a game where one side losing means
-                the other side wins. Every time class has its own Elo, which means that
-                players can be rated differently for different modes. After playing hundreds of
-                games over several months, have I improved at all? Am I better in certain time
-                classes? How does Hikaru compare?
-                <br><br>
-                Frankly, no. I have not improved. In fact, I think I've gotten worse. My
-                blitz and bullet ratings are at around 300 Elo (and decreasing), which puts me in
-                the 15th percentile of players. That means that I am worse than 85% of players
-                on the chess.com website. My rapid rating is a little higher, at 600 Elo, placing
-                me at around the 45th percentile. For a player like me who does not know any
-                chess theory, every game requires me to analyze the board at every position. I
-                don't have an encyclopedia of openings memorized, nor do I know any strategies.
-                My skill in chess is completely dependent on the amount of time I have to think
-                of a move. Hikaru's rating has remained pretty consistent over the months, at
-                around 3300 Elo in bullet and blitz and 2800 Elo in rapid. While Hikaru hasn't
-                "improved" in the sense that his Elo hasn't increased, he has remained #2 in
-                the world in blitz and bullet and #6 in the world in rapid for several months,
-                an impossibly impressive feat.
-                <br><br>
-                When I made a chess.com account, I foolishly selected "intermediate" for my
-                skill level. That started me off with 1200 Elo in every time class which, as is
-                evident, decreased substantially and rapidly. In conclusion, I need to study.
-            </p>
-        </div>
-    </section>
-    <section class="section-05">
-        <div class="visualization">
-            <div class="visualization-5"></div>
-            <div class="code-container">
-                <pre>
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        This visualization maps Elo in a time series from February to the end of
+        April. Elo is a rating system used to calculate the relative skill levels of
+        players in a zero-sum game; that is to say, a game where one side losing means
+        the other side wins. Every time class has its own Elo, which means that
+        players can be rated differently for different modes. After playing hundreds of
+        games over several months, have I improved at all? Am I better in certain time
+        classes? How does Hikaru compare?
+        <br><br>
+        Frankly, no. I have not improved. In fact, I think I've gotten worse. My
+        blitz and bullet ratings are at around 300 Elo (and decreasing), which puts me in
+        the 15th percentile of players. That means that I am worse than 85% of players
+        on the chess.com website. My rapid rating is a little higher, at 600 Elo, placing
+        me at around the 45th percentile. For a player like me who does not know any
+        chess theory, every game requires me to analyze the board at every position. I
+        don't have an encyclopedia of openings memorized, nor do I know any strategies.
+        My skill in chess is completely dependent on the amount of time I have to think
+        of a move. Hikaru's rating has remained pretty consistent over the months, at
+        around 3300 Elo in bullet and blitz and 2800 Elo in rapid. While Hikaru hasn't
+        "improved" in the sense that his Elo hasn't increased, he has remained #2 in
+        the world in blitz and bullet and #6 in the world in rapid for several months,
+        an impossibly impressive feat.
+        <br><br>
+        When I made a chess.com account, I foolishly selected "intermediate" for my
+        skill level. That started me off with 1200 Elo in every time class which, as is
+        evident, decreased substantially and rapidly. In conclusion, I need to study.
+      </p>
+    </div>
+  </section>
+  <div class="title">VISUALIZATION 5</div>
+  <section class="section-05">
+    <div class="visualization">
+      <div class="visualization-area"></div>
+      <div class="code-container">
+        <pre>
                     <code class="language-r">
 ui <- fluidPage(
   titlePanel("Chloropleth of Top 50 Players by Time Class"),
@@ -760,39 +765,44 @@ server<-function(input,output){
 shinyApp(ui=ui, server=server)
                     </code>
                 </pre>
-            </div>
-        </div>
-        <div class="text">
-            <p>
-                Chess is one of the oldest and most played games in the world, and has been
-                played on every continent on the planet. Unlike sports, which can be
-                inaccessible to many depending on the location, the cost of gear,
-                and how many friends are available, chess can be
-                played by anyone anywhere. Thus, it has had large international impact, with
-                chess masters originating from countries around the globe. Both Hikaru and I
-                are Americans, so I wanted to see how great players are represented
-                internationally.
-                <br><br>
-                While the United States definitely hosts a majority of top players, masters
-                can be seen across the map. Interestingly, a much greater majority of top bullet
-                players live in the United States than in any other country. Fewer than five
-                players per country from countries other than the United States are in the top
-                50 bullet players. In blitz and rapid time classes, the amount of top players in
-                Russia, China, and India jumps up to ~7 players per country. There are also
-                considerably more top players from South America who play bullet than there are
-                in any other time class.
-            </p>
-        </div>
-    </section>
-    <p>
-        Many questions arose from my findings. I would like to know the locations of
-        everyone in the world that I have played against. I would also like to know how
-        that compares to the locations of players that Hikaru plays against. I wonder if
-        it is different. As I play more games and actually attempt to study chess,
-        I wonder how my visualizations will change. I wonder if I'll actually get better!
-    </p>
-    <script src="sidebar.js"></script>
-    <script src="prism.js"></script>
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        Chess is one of the oldest and most played games in the world, and has been
+        played on every continent on the planet. Unlike sports, which can be
+        inaccessible to many depending on the location, the cost of gear,
+        and how many friends are available, chess can be
+        played by anyone anywhere. Thus, it has had large international impact, with
+        chess masters originating from countries around the globe. Both Hikaru and I
+        are Americans, so I wanted to see how great players are represented
+        internationally.
+        <br><br>
+        While the United States definitely hosts a majority of top players, masters
+        can be seen across the map. Interestingly, a much greater majority of top bullet
+        players live in the United States than in any other country. Fewer than five
+        players per country from countries other than the United States are in the top
+        50 bullet players. In blitz and rapid time classes, the amount of top players in
+        Russia, China, and India jumps up to ~7 players per country. There are also
+        considerably more top players from South America who play bullet than there are
+        in any other time class.
+      </p>
+    </div>
+  </section>
+  <p>
+    Many questions arose from my findings. I would like to know the locations of
+    everyone in the world that I have played against. I would also like to know how
+    that compares to the locations of players that Hikaru plays against. I wonder if
+    it is different. As I play more games and actually attempt to study chess,
+    I wonder how my visualizations will change. I wonder if I'll actually get better!
+  </p>
+  <p>
+    You can download the source file <a href="Final Visualizations.R" class="underline" target="_blank">here</a>
+    or on my <a href="https://github.com/imvahn/DataVisualizationFinal2023" class="underline"
+      target="_blank">GitHub</a>.
+  </p>
+  <script src="sidebar.js"></script>
+  <script src="prism.js"></script>
 
 </body>
 

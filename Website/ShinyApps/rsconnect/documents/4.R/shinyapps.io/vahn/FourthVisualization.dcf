@@ -1,0 +1,13 @@
+name: FourthVisualization
+title: FourthVisualization
+username: vahn
+account: vahn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10852258
+bundleId: 8090316
+url: https://vahn.shinyapps.io/FourthVisualization/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 1.R|2.R|5.R

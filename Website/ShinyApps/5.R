@@ -1,16 +1,9 @@
-require(chessR)
 require(ggplot2)
 require(dplyr)
 require(reshape2)
 require(plotly)
 require(maps)
 require(lubridate)
-require(chess)
-require(rchess)
-require(shiny)
-require(chess.com)
-require(bigchess)
-require(tidyr)
 
 ui <- fluidPage(
   titlePanel("Chloropleth of Top 50 Players by Time Class"),
