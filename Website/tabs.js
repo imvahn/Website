@@ -1,5 +1,3 @@
-
-
 console.clear();
 let targets = document.querySelectorAll("li");
 let articles = document.querySelectorAll(".article");
@@ -45,4 +43,3 @@ function doCoolStuff() {
         animation.to(articles[activeTab], { duration: 1, y: 0, ease: "elastic" }, "-=0.25");
     }
 }
-

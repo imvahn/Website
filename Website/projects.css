@@ -1,6 +1,5 @@
 section {
-    height: 1000px;
-    margin: 5px;
+    height: 1200px;
     position: relative;
 }
 
@@ -8,14 +7,12 @@ section {
     width: 50%;
     height: 100%;
     float: right;
-    background-color: white;
 }
 
 .text {
     width: 50%;
     height: 100%;
     float: left;
-    background-color: white;
 }
 
 .text p {
