@@ -48,8 +48,9 @@
       I was wrong. It is months later and I am still unbelievably bad at chess. However, my ego-fueled and naïve
       approach to playing chess has one benefit: I'm the perfect control group! Who else would play chess for hours a
       week and months on end without attempting to learn anything? I am as far removed as one can be from the best
-      chess players in the world while still having a comprehensive understanding of the game. In this project, I
-      attempt to analyze my games through several different factors such as move count, board position, and elo. These
+      chess players in the world while still having a comprehensive understanding of the game. <b>In this project, I
+        attempt to analyze my chess games fom February to April 2023 through several different factors such as move
+        count, board position, and elo.</b> These
       factors will be explained in greater depth throughout the visualizations. I also analyze every game played in
       three different time classes: bullet, blitz, and rapid. A time class indicates the amount of time allotted to
       each player in a game. The time for each respective player counts down when it is their turn, and pauses when it
@@ -61,14 +62,16 @@
       entertaining to compare games based on their time class. It is worth noting that the majority of my games played
       on chess.com are blitz games, so the data of my blitz games is the least susceptible to outliers.
       <br><br>
-      A crucial part of my analysis is how my games compares to games played by
-      Hikaru Nakamura, an American chess grandmaster and world champion in several tournaments. One of the most
+      <b>A crucial part of my analysis is how my games compares to games played by
+        Hikaru Nakamura, an American chess grandmaster and world champion in several tournaments.</b> One of the most
       striking aspects of his gameplay is how accurate he is. In chess, accuracy refers to how closely a player
       compares to a chess engine, a machine-learning program that determines the 'best' move options. Hikaru averages
       80% to 90% accuracy in his games, with a significant portion in the 95%-99% range. This is staggering. It means
       that he is choosing almost exclusively perfect moves in every game. Hikaru's gameplay is as close to a computer
-      as possible. Thus, by comparing my games with Hikaru's, I am comparing two extremes. How does untrained, naïve
-      gameplay compare to some of the most statistically accurate gameplay in the world? Just how bad am I? In these
+      as possible. Thus, by comparing my games with Hikaru's, I am comparing two extremes. <b>How does untrained,
+        naïve
+        gameplay compare to some of the most statistically accurate gameplay in the world?</b> Just how bad am I? In
+      these
       past three months, have I improved at all? We'll see what my analysis yields.
     </p>
     <div class="smallspace"></div>
@@ -78,73 +81,74 @@
         <div class="visualization-area"></div>
         <div class="code-container">
           <pre>
-                          <code class="language-r">
-      chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
-      chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
-      
-      chessV$nMoves<-return_num_moves(moves_string=chessV$Moves)
-      chessV%>%
-        filter(Event=="Live Chess")->chessV
-      chessV<-chessV[!is.na(chessV$ECO),]
-      chessV$Winner<-NA
-      chessV$Winner[chessV$White == "imvahn" & chessV$Result == "1-0"]<-"White"
-      chessV$Winner[chessV$Black == "imvahn" & chessV$Result == "0-1"]<-"Black"
-      
-      chessH$nMoves<-return_num_moves(moves_string=chessH$Moves)
-      chessH%>%
-        filter(Event=="Live Chess")->chessH
-      chessH<-chessH[!is.na(chessH$ECO),]
-      chessH$Winner<-NA
-      chessH$Winner[chessH$White == "Hikaru" & chessH$Result == "1-0"]<-"White"
-      chessH$Winner[chessH$Black == "Hikaru" & chessH$Result == "0-1"]<-"Black"
-      
-      ui <- fluidPage(
-        titlePanel("Density of the Number of Moves Per Game in Won Games"),
-        sidebarLayout(
-          sidebarPanel(
-            selectInput(
-              inputId="gamemode",
-              label="Choose a Time Class",
-              choices=c("bullet","blitz","rapid"),
-              selected="blitz")),
-          mainPanel(
-            plotOutput("Vahn"),
-            plotOutput("Hikaru"))))
-      
-      server<-function(input,output){
-        output$Vahn<-renderPlot({
-          ggplot(chessV%>%
-                   filter(TimeClass==input$gamemode)%>%
-                   filter(Winner=="White" | Winner=="Black"))+
-            geom_density(aes(x=nMoves,fill=Winner),color="black",alpha=.5)+
-            labs(title="Vahn",
-                 x="Number of Moves",
-                 y="Density",
-                 fill="Piece Color",
-                 color="Piece Color")+
-            scale_fill_manual(values=c("black","white"))+
-            xlim(c(0,150))})
-        output$Hikaru<-renderPlot({
-          ggplot(chessH%>%
-                   filter(TimeClass==input$gamemode)%>%
-                   filter(Winner=="White" | Winner=="Black"))+
-            geom_density(aes(x=nMoves,fill=Winner),color="black",alpha=.5)+
-            labs(title="Hikaru",
-                 x="Number of Moves",
-                 y="Density",
-                 fill="Piece Color",
-                 color="Piece Color")+
-            scale_fill_manual(values=c("black","white"))+
-            xlim(c(0,150))})}
-      
-      shinyApp(ui = ui, server = server)
-                          </code>
-                      </pre>
+                              <code class="language-r">
+          chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
+          chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
+          
+          chessV$nMoves<-return_num_moves(moves_string=chessV$Moves)
+          chessV%>%
+            filter(Event=="Live Chess")->chessV
+          chessV<-chessV[!is.na(chessV$ECO),]
+          chessV$Winner<-NA
+          chessV$Winner[chessV$White == "imvahn" & chessV$Result == "1-0"]<-"White"
+          chessV$Winner[chessV$Black == "imvahn" & chessV$Result == "0-1"]<-"Black"
+          
+          chessH$nMoves<-return_num_moves(moves_string=chessH$Moves)
+          chessH%>%
+            filter(Event=="Live Chess")->chessH
+          chessH<-chessH[!is.na(chessH$ECO),]
+          chessH$Winner<-NA
+          chessH$Winner[chessH$White == "Hikaru" & chessH$Result == "1-0"]<-"White"
+          chessH$Winner[chessH$Black == "Hikaru" & chessH$Result == "0-1"]<-"Black"
+          
+          ui <- fluidPage(
+            titlePanel("Density of the Number of Moves Per Game in Won Games"),
+            sidebarLayout(
+              sidebarPanel(
+                selectInput(
+                  inputId="gamemode",
+                  label="Choose a Time Class",
+                  choices=c("bullet","blitz","rapid"),
+                  selected="blitz")),
+              mainPanel(
+                plotOutput("Vahn"),
+                plotOutput("Hikaru"))))
+          
+          server<-function(input,output){
+            output$Vahn<-renderPlot({
+              ggplot(chessV%>%
+                       filter(TimeClass==input$gamemode)%>%
+                       filter(Winner=="White" | Winner=="Black"))+
+                geom_density(aes(x=nMoves,fill=Winner),color="black",alpha=.5)+
+                labs(title="Vahn",
+                     x="Number of Moves",
+                     y="Density",
+                     fill="Piece Color",
+                     color="Piece Color")+
+                scale_fill_manual(values=c("black","white"))+
+                xlim(c(0,150))})
+            output$Hikaru<-renderPlot({
+              ggplot(chessH%>%
+                       filter(TimeClass==input$gamemode)%>%
+                       filter(Winner=="White" | Winner=="Black"))+
+                geom_density(aes(x=nMoves,fill=Winner),color="black",alpha=.5)+
+                labs(title="Hikaru",
+                     x="Number of Moves",
+                     y="Density",
+                     fill="Piece Color",
+                     color="Piece Color")+
+                scale_fill_manual(values=c("black","white"))+
+                xlim(c(0,150))})}
+          
+          shinyApp(ui = ui, server = server)
+                              </code>
+                          </pre>
         </div>
       </div>
       <div class="text">
         <p>
-          This first visualization focuses on the number of moves in games played by myself and Hikaru. There is a
+          This first visualization focuses on the number of moves in games played by myself and Hikaru. There
+          is a
           lot
           of information that can be revealed by the
           number of moves in a game. Every chess game has three stages: an opening, a
@@ -164,10 +168,10 @@
           1-2 total minutes, many games can end simply because a player runs out of time,
           not because they got checkmated.
           <br><br>
-          The first visualization looks at the distribution of moves in games that I won
-          and in games that Hikaru won. The distribution accounts for the color of
-          Hikaru's and my pieces. Because white goes first, the player who plays white
-          always has a slight advantage. This becomes evident in the visualization.
+          <b>This visualization looks at the distribution of moves in games that I won
+            and in games that Hikaru won. The distribution accounts for the color of
+            Hikaru's and my pieces. Because white goes first, the player who plays white
+            always has a slight advantage. This becomes evident in the visualization.</b>
           <br><br>
           Across all the time classes, I won more games in fewer moves as white than as
           black. This makes sense because of white's first-move advantage. As a chess
@@ -209,78 +213,78 @@
         <div class="visualization-area"></div>
         <div class="code-container">
           <pre>
-                          <code class="language-r">
-      chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
-      chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
-      
-      chessV$nMoves<-return_num_moves(moves_string=chessV$Moves)
-      chessV%>%
-        filter(Event=="Live Chess")->chessV
-      chessV<-chessV[!is.na(chessV$ECO),]
-      chessV$Winner<-NA
-      chessV$Winner[chessV$White == "imvahn" & chessV$Result == "1-0"]<-"White"
-      chessV$Winner[chessV$Black == "imvahn" & chessV$Result == "0-1"]<-"Black"
-      
-      chessH$nMoves<-return_num_moves(moves_string=chessH$Moves)
-      chessH%>%
-        filter(Event=="Live Chess")->chessH
-      chessH<-chessH[!is.na(chessH$ECO),]
-      chessH$Winner<-NA
-      chessH$Winner[chessH$White == "Hikaru" & chessH$Result == "1-0"]<-"White"
-      chessH$Winner[chessH$Black == "Hikaru" & chessH$Result == "0-1"]<-"Black"
-      
-      chessV$Win<-"Loss"
-      chessV$Win[chessV$Winner == "White" | chessV$Winner == "Black"]<-"Win"
-      chessV$Win[chessV$Result == "1/2-1/2"]<-"Draw"
-      
-      chessH$Win<-"Loss"
-      chessH$Win[chessH$Winner == "White" | chessH$Winner == "Black"]<-"Win"
-      chessH$Win[chessH$Result == "1/2-1/2"]<-"Draw"
-      
-      ui <- fluidPage(
-        titlePanel("Density of the Number of Moves Per Game Based on Game Outcome"),
-        sidebarLayout(
-          sidebarPanel(
-            selectInput(
-              inputId="gamemode",
-              label="Choose a Time Class",
-              choices=c("bullet","blitz","rapid"),
-              selected="blitz")),
-          mainPanel(
-            plotOutput("Vahn2"),
-            plotOutput("Hikaru2"))))
-      
-      server<-function(input,output){
-        output$Vahn2<-renderPlot({
-          ggplot(chessV%>%
-                   filter(TimeClass==input$gamemode))+
-            geom_density(aes(x=nMoves, fill=Win),color="black",alpha=.3)+
-            labs(title="Vahn",
-                 x="Number of Moves",
-                 y="Density",
-                 fill="Game Outcome")+
-            scale_fill_manual(values=c("red","green","blue"))+
-            xlim(c(0,150))})
-        output$Hikaru2<-renderPlot({
-          ggplot(chessH%>%
-                   filter(TimeClass==input$gamemode))+
-            geom_density(aes(x=nMoves, fill=Win),color="black",alpha=.3)+
-            labs(title="Hikaru",
-                 x="Number of Moves",
-                 y="Density",
-                 fill="Game Outcome")+
-            scale_fill_manual(values=c("red","green","blue"))+
-            xlim(c(0,150))})}
-      
-      shinyApp(ui=ui, server=server)
-                          </code>
-                      </pre>
+                              <code class="language-r">
+          chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
+          chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
+          
+          chessV$nMoves<-return_num_moves(moves_string=chessV$Moves)
+          chessV%>%
+            filter(Event=="Live Chess")->chessV
+          chessV<-chessV[!is.na(chessV$ECO),]
+          chessV$Winner<-NA
+          chessV$Winner[chessV$White == "imvahn" & chessV$Result == "1-0"]<-"White"
+          chessV$Winner[chessV$Black == "imvahn" & chessV$Result == "0-1"]<-"Black"
+          
+          chessH$nMoves<-return_num_moves(moves_string=chessH$Moves)
+          chessH%>%
+            filter(Event=="Live Chess")->chessH
+          chessH<-chessH[!is.na(chessH$ECO),]
+          chessH$Winner<-NA
+          chessH$Winner[chessH$White == "Hikaru" & chessH$Result == "1-0"]<-"White"
+          chessH$Winner[chessH$Black == "Hikaru" & chessH$Result == "0-1"]<-"Black"
+          
+          chessV$Win<-"Loss"
+          chessV$Win[chessV$Winner == "White" | chessV$Winner == "Black"]<-"Win"
+          chessV$Win[chessV$Result == "1/2-1/2"]<-"Draw"
+          
+          chessH$Win<-"Loss"
+          chessH$Win[chessH$Winner == "White" | chessH$Winner == "Black"]<-"Win"
+          chessH$Win[chessH$Result == "1/2-1/2"]<-"Draw"
+          
+          ui <- fluidPage(
+            titlePanel("Density of the Number of Moves Per Game Based on Game Outcome"),
+            sidebarLayout(
+              sidebarPanel(
+                selectInput(
+                  inputId="gamemode",
+                  label="Choose a Time Class",
+                  choices=c("bullet","blitz","rapid"),
+                  selected="blitz")),
+              mainPanel(
+                plotOutput("Vahn2"),
+                plotOutput("Hikaru2"))))
+          
+          server<-function(input,output){
+            output$Vahn2<-renderPlot({
+              ggplot(chessV%>%
+                       filter(TimeClass==input$gamemode))+
+                geom_density(aes(x=nMoves, fill=Win),color="black",alpha=.3)+
+                labs(title="Vahn",
+                     x="Number of Moves",
+                     y="Density",
+                     fill="Game Outcome")+
+                scale_fill_manual(values=c("red","green","blue"))+
+                xlim(c(0,150))})
+            output$Hikaru2<-renderPlot({
+              ggplot(chessH%>%
+                       filter(TimeClass==input$gamemode))+
+                geom_density(aes(x=nMoves, fill=Win),color="black",alpha=.3)+
+                labs(title="Hikaru",
+                     x="Number of Moves",
+                     y="Density",
+                     fill="Game Outcome")+
+                scale_fill_manual(values=c("red","green","blue"))+
+                xlim(c(0,150))})}
+          
+          shinyApp(ui=ui, server=server)
+                              </code>
+                          </pre>
         </div>
       </div>
       <div class="text">
         <p>
-          This visualization looks at game outcomes (win, loss, or draw) to find out how the number of moves in a
-          game changes depending on how the game ends.
+          <b>This visualization looks at game outcomes (win, loss, or draw) to find out how the number of moves in a
+            game changes depending on how the game ends.</b>
           <br><br>
           These distributions are very interesting. First, it's worth noting that games
           ending in a draw have a much lower density than those ending in a win or a loss.
@@ -352,176 +356,176 @@
         </object>
         <div class="code-container">
           <pre>
-                          <code class="language-r">
-      If you want to compare BULLET games where Hikaru and I play as WHITE, run the
-      # following lines:
-      
-      chessV%>%
-        filter(TimeClass=="bullet")%>%
-        filter(White=="imvahn")%>%
-        select(Moves)->countplot1
-      chessH%>%
-        filter(TimeClass=="bullet")%>%
-        filter(White=="Hikaru")%>%
-        select(Moves)->countplot2
-      
-      # If you want to compare BULLET games where Hikaru and I play as BLACK, run the
-      # following lines:
-      
-      chessV%>%
-        filter(TimeClass=="bullet")%>%
-        filter(Black=="imvahn")%>%
-        select(Moves)->countplot1
-      chessH%>%
-        filter(TimeClass=="bullet")%>%
-        filter(Black=="Hikaru")%>%
-        select(Moves)->countplot2
-      
-      # If you want to compare BLITZ games where Hikaru and I play as WHITE, run the
-      # following lines:
-      
-      chessV%>%
-        filter(TimeClass=="blitz")%>%
-        filter(White=="imvahn")%>%
-        select(Moves)->countplot1
-      chessH%>%
-        filter(TimeClass=="blitz")%>%
-        filter(White=="Hikaru")%>%
-        select(Moves)->countplot2
-      
-      # If you want to compare BLITZ games where Hikaru and I play as BLACK, run the
-      # following lines:
-      
-      chessV%>%
-        filter(TimeClass=="blitz")%>%
-        filter(Black=="imvahn")%>%
-        select(Moves)->countplot1
-      chessH%>%
-        filter(TimeClass=="blitz")%>%
-        filter(Black=="Hikaru")%>%
-        select(Moves)->countplot2
-      
-      # If you want to compare RAPID games where Hikaru and I play as WHITE, run the
-      # following lines:
-      
-      chessV%>%
-        filter(TimeClass=="rapid")%>%
-        filter(White=="imvahn")%>%
-        select(Moves)->countplot1
-      chessH%>%
-        filter(TimeClass=="rapid")%>%
-        filter(White=="Hikaru")%>%
-        select(Moves)->countplot2
-      
-      # If you want to compare RAPID games where Hikaru and I play as BLACK, run the
-      # following lines:
-      
-      chessV%>%
-        filter(TimeClass=="rapid")%>%
-        filter(Black=="imvahn")%>%
-        select(Moves)->countplot1
-      chessH%>%
-        filter(TimeClass=="rapid")%>%
-        filter(Black=="Hikaru")%>%
-        select(Moves)->countplot2
-      
-      # YOU MUST RUN THE FOLLOWING LINES AFTER EVERY TIME
-      # YOU RUN ANY OF THE ABOVE LINES:
-      
-      counts<-data.frame(letter=c(rep("a",8),rep("b",8),rep("c",8),rep("d",8),rep("e",8),rep("f",8),rep("g",8),rep("h",8)),
-                         number=c(rep(c(1,2,3,4,5,6,7,8),8)),
-                         count=rep(0,64))
-      
-      for (j in 1:nrow(countplot1)){
-        Moves_updated<-strsplit(countplot1$Moves, " ")[[j]]
-        Moves_updated<-Moves_updated[grepl("^[A-Za-z][0-9a-zA-Z]+$",Moves_updated)]
-        Moves_updated<-ifelse(nchar(Moves_updated)==3,substr(Moves_updated,2,3),Moves_updated)
-        Moves_updated<-ifelse(nchar(Moves_updated)==4,substr(Moves_updated,3,4),Moves_updated)
-        Moves_updated<-ifelse(nchar(Moves_updated)==5,substr(Moves_updated,4,5),Moves_updated)
-        df<-data.frame(Moves_updated)
-        for(i in 1:nrow(df)){
-          df$letter[i]<-strsplit(df$Moves_updated,"")[[i]][1]
-          df$number[i]<-strsplit(df$Moves_updated,"")[[i]][2]}
-        df%>%
-          mutate(number=as.numeric(number))%>%
-          group_by(letter,number)%>%
-          count(letter)->df
-        plot<-left_join(counts,df,by=c("letter","number"))
-        plot$n[is.na(plot$n)]<-0
-        for(i in 1:nrow(plot)){
-          counts$count[i]<-sum(counts$count[i],plot$n[i])}}
-      
-      counts2<-data.frame(letter=c(rep("a",8),rep("b",8),rep("c",8),rep("d",8),rep("e",8),rep("f",8),rep("g",8),rep("h",8)),
-                          number=c(rep(c(1,2,3,4,5,6,7,8),8)),
-                          count=rep(0,64))
-      
-      for (j in 1:nrow(countplot2)){
-        Moves_updated2<-strsplit(countplot2$Moves, " ")[[j]]
-        Moves_updated2<-Moves_updated2[grepl("^[A-Za-z][0-9a-zA-Z]+$",Moves_updated2)]
-        Moves_updated2<-ifelse(nchar(Moves_updated2)==3,substr(Moves_updated2,2,3),Moves_updated2)
-        Moves_updated2<-ifelse(nchar(Moves_updated2)==4,substr(Moves_updated2,3,4),Moves_updated2)
-        Moves_updated2<-ifelse(nchar(Moves_updated2)==5,substr(Moves_updated2,4,5),Moves_updated2)
-        df2<-data.frame(Moves_updated2)
-        for(i in 1:nrow(df2)){
-          df2$letter[i]<-strsplit(df2$Moves_updated2,"")[[i]][1]
-          df2$number[i]<-strsplit(df2$Moves_updated2,"")[[i]][2]}
-        df2%>%
-          mutate(number=as.numeric(number))%>%
-          group_by(letter,number)%>%
-          count(letter)->df2
-        plot2<-left_join(counts2,df2,by=c("letter","number"))
-        plot2$n[is.na(plot2$n)]<-0
-        for(i in 1:nrow(plot2)){
-          counts2$count[i]<-sum(counts2$count[i],plot2$n[i])}}
-      
-      # Shiny app:
-      
-      ui <- fluidPage(
-        titlePanel("Chess Piece Position Heatmap"),
-        mainPanel(
-          plotOutput("Vahn4"),
-          plotOutput("Hikaru4")))
-      
-      server<-function(input,output){
-        output$Vahn4<-renderPlot({
-          ggplot(counts)+
-            geom_tile(aes(x=letter,y=number,fill=count))+
-            labs(title="Vahn",
-                 fill="Count")+
-            scale_fill_distiller(palette="Greens",direction=1)+
-            theme(axis.title.x=element_blank(),
-                  axis.ticks.x=element_blank(),
-                  axis.title.y=element_blank(),
-                  axis.ticks.y=element_blank(),
-                  panel.background=element_blank(),
-                  panel.grid.major=element_blank(),
-                  panel.grid.minor=element_blank())+
-            scale_y_continuous(labels = as.character(counts$number), breaks = counts$number)})
-        output$Hikaru4<-renderPlot({
-          ggplot(counts2)+
-            geom_tile(aes(x=letter,y=number,fill=count))+
-            labs(title="Hikaru",
-                 fill="Count")+
-            scale_fill_distiller(palette="Greens",direction=1)+
-            theme(axis.title.x=element_blank(),
-                  axis.ticks.x=element_blank(),
-                  axis.title.y=element_blank(),
-                  axis.ticks.y=element_blank(),
-                  panel.background=element_blank(),
-                  panel.grid.major=element_blank(),
-                  panel.grid.minor=element_blank())+
-            scale_y_continuous(labels = as.character(counts2$number), breaks = counts2$number)})}
-      
-      shinyApp(ui=ui,server=server)
-                          </code>
-                      </pre>
+                              <code class="language-r">
+          If you want to compare BULLET games where Hikaru and I play as WHITE, run the
+          # following lines:
+          
+          chessV%>%
+            filter(TimeClass=="bullet")%>%
+            filter(White=="imvahn")%>%
+            select(Moves)->countplot1
+          chessH%>%
+            filter(TimeClass=="bullet")%>%
+            filter(White=="Hikaru")%>%
+            select(Moves)->countplot2
+          
+          # If you want to compare BULLET games where Hikaru and I play as BLACK, run the
+          # following lines:
+          
+          chessV%>%
+            filter(TimeClass=="bullet")%>%
+            filter(Black=="imvahn")%>%
+            select(Moves)->countplot1
+          chessH%>%
+            filter(TimeClass=="bullet")%>%
+            filter(Black=="Hikaru")%>%
+            select(Moves)->countplot2
+          
+          # If you want to compare BLITZ games where Hikaru and I play as WHITE, run the
+          # following lines:
+          
+          chessV%>%
+            filter(TimeClass=="blitz")%>%
+            filter(White=="imvahn")%>%
+            select(Moves)->countplot1
+          chessH%>%
+            filter(TimeClass=="blitz")%>%
+            filter(White=="Hikaru")%>%
+            select(Moves)->countplot2
+          
+          # If you want to compare BLITZ games where Hikaru and I play as BLACK, run the
+          # following lines:
+          
+          chessV%>%
+            filter(TimeClass=="blitz")%>%
+            filter(Black=="imvahn")%>%
+            select(Moves)->countplot1
+          chessH%>%
+            filter(TimeClass=="blitz")%>%
+            filter(Black=="Hikaru")%>%
+            select(Moves)->countplot2
+          
+          # If you want to compare RAPID games where Hikaru and I play as WHITE, run the
+          # following lines:
+          
+          chessV%>%
+            filter(TimeClass=="rapid")%>%
+            filter(White=="imvahn")%>%
+            select(Moves)->countplot1
+          chessH%>%
+            filter(TimeClass=="rapid")%>%
+            filter(White=="Hikaru")%>%
+            select(Moves)->countplot2
+          
+          # If you want to compare RAPID games where Hikaru and I play as BLACK, run the
+          # following lines:
+          
+          chessV%>%
+            filter(TimeClass=="rapid")%>%
+            filter(Black=="imvahn")%>%
+            select(Moves)->countplot1
+          chessH%>%
+            filter(TimeClass=="rapid")%>%
+            filter(Black=="Hikaru")%>%
+            select(Moves)->countplot2
+          
+          # YOU MUST RUN THE FOLLOWING LINES AFTER EVERY TIME
+          # YOU RUN ANY OF THE ABOVE LINES:
+          
+          counts<-data.frame(letter=c(rep("a",8),rep("b",8),rep("c",8),rep("d",8),rep("e",8),rep("f",8),rep("g",8),rep("h",8)),
+                             number=c(rep(c(1,2,3,4,5,6,7,8),8)),
+                             count=rep(0,64))
+          
+          for (j in 1:nrow(countplot1)){
+            Moves_updated<-strsplit(countplot1$Moves, " ")[[j]]
+            Moves_updated<-Moves_updated[grepl("^[A-Za-z][0-9a-zA-Z]+$",Moves_updated)]
+            Moves_updated<-ifelse(nchar(Moves_updated)==3,substr(Moves_updated,2,3),Moves_updated)
+            Moves_updated<-ifelse(nchar(Moves_updated)==4,substr(Moves_updated,3,4),Moves_updated)
+            Moves_updated<-ifelse(nchar(Moves_updated)==5,substr(Moves_updated,4,5),Moves_updated)
+            df<-data.frame(Moves_updated)
+            for(i in 1:nrow(df)){
+              df$letter[i]<-strsplit(df$Moves_updated,"")[[i]][1]
+              df$number[i]<-strsplit(df$Moves_updated,"")[[i]][2]}
+            df%>%
+              mutate(number=as.numeric(number))%>%
+              group_by(letter,number)%>%
+              count(letter)->df
+            plot<-left_join(counts,df,by=c("letter","number"))
+            plot$n[is.na(plot$n)]<-0
+            for(i in 1:nrow(plot)){
+              counts$count[i]<-sum(counts$count[i],plot$n[i])}}
+          
+          counts2<-data.frame(letter=c(rep("a",8),rep("b",8),rep("c",8),rep("d",8),rep("e",8),rep("f",8),rep("g",8),rep("h",8)),
+                              number=c(rep(c(1,2,3,4,5,6,7,8),8)),
+                              count=rep(0,64))
+          
+          for (j in 1:nrow(countplot2)){
+            Moves_updated2<-strsplit(countplot2$Moves, " ")[[j]]
+            Moves_updated2<-Moves_updated2[grepl("^[A-Za-z][0-9a-zA-Z]+$",Moves_updated2)]
+            Moves_updated2<-ifelse(nchar(Moves_updated2)==3,substr(Moves_updated2,2,3),Moves_updated2)
+            Moves_updated2<-ifelse(nchar(Moves_updated2)==4,substr(Moves_updated2,3,4),Moves_updated2)
+            Moves_updated2<-ifelse(nchar(Moves_updated2)==5,substr(Moves_updated2,4,5),Moves_updated2)
+            df2<-data.frame(Moves_updated2)
+            for(i in 1:nrow(df2)){
+              df2$letter[i]<-strsplit(df2$Moves_updated2,"")[[i]][1]
+              df2$number[i]<-strsplit(df2$Moves_updated2,"")[[i]][2]}
+            df2%>%
+              mutate(number=as.numeric(number))%>%
+              group_by(letter,number)%>%
+              count(letter)->df2
+            plot2<-left_join(counts2,df2,by=c("letter","number"))
+            plot2$n[is.na(plot2$n)]<-0
+            for(i in 1:nrow(plot2)){
+              counts2$count[i]<-sum(counts2$count[i],plot2$n[i])}}
+          
+          # Shiny app:
+          
+          ui <- fluidPage(
+            titlePanel("Chess Piece Position Heatmap"),
+            mainPanel(
+              plotOutput("Vahn4"),
+              plotOutput("Hikaru4")))
+          
+          server<-function(input,output){
+            output$Vahn4<-renderPlot({
+              ggplot(counts)+
+                geom_tile(aes(x=letter,y=number,fill=count))+
+                labs(title="Vahn",
+                     fill="Count")+
+                scale_fill_distiller(palette="Greens",direction=1)+
+                theme(axis.title.x=element_blank(),
+                      axis.ticks.x=element_blank(),
+                      axis.title.y=element_blank(),
+                      axis.ticks.y=element_blank(),
+                      panel.background=element_blank(),
+                      panel.grid.major=element_blank(),
+                      panel.grid.minor=element_blank())+
+                scale_y_continuous(labels = as.character(counts$number), breaks = counts$number)})
+            output$Hikaru4<-renderPlot({
+              ggplot(counts2)+
+                geom_tile(aes(x=letter,y=number,fill=count))+
+                labs(title="Hikaru",
+                     fill="Count")+
+                scale_fill_distiller(palette="Greens",direction=1)+
+                theme(axis.title.x=element_blank(),
+                      axis.ticks.x=element_blank(),
+                      axis.title.y=element_blank(),
+                      axis.ticks.y=element_blank(),
+                      panel.background=element_blank(),
+                      panel.grid.major=element_blank(),
+                      panel.grid.minor=element_blank())+
+                scale_y_continuous(labels = as.character(counts2$number), breaks = counts2$number)})}
+          
+          shinyApp(ui=ui,server=server)
+                              </code>
+                          </pre>
         </div>
       </div>
       <div class="text">
         <p>
-          The next visualization maps the amount of times pieces were moved to certain
-          positions on the board. It's essentially a 'heat map' of where pieces are placed
-          most often. This required a gigantic amount of data manipulation, to the point
+          <b>This visualization maps the amount of times pieces were moved to certain
+            positions on the board. It's essentially a 'heat map' of where pieces are placed
+            most often.</b> This required a gigantic amount of data manipulation, to the point
           where it literally breaks the shiny app. Because of this, I've embedded a PDF of all the visualzation
           results instead of a shiny app.
           <br><br>
@@ -574,90 +578,90 @@
         <div class="visualization-area"></div>
         <div class="code-container">
           <pre>
-                          <code class="language-r">
-      chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
-      chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
-      
-      chessV$nMoves<-return_num_moves(moves_string=chessV$Moves)
-      chessV%>%
-        filter(Event=="Live Chess")->chessV
-      chessV<-chessV[!is.na(chessV$ECO),]
-      chessV$Winner<-NA
-      chessV$Winner[chessV$White == "imvahn" & chessV$Result == "1-0"]<-"White"
-      chessV$Winner[chessV$Black == "imvahn" & chessV$Result == "0-1"]<-"Black"
-      
-      chessH$nMoves<-return_num_moves(moves_string=chessH$Moves)
-      chessH%>%
-        filter(Event=="Live Chess")->chessH
-      chessH<-chessH[!is.na(chessH$ECO),]
-      chessH$Winner<-NA
-      chessH$Winner[chessH$White == "Hikaru" & chessH$Result == "1-0"]<-"White"
-      chessH$Winner[chessH$Black == "Hikaru" & chessH$Result == "0-1"]<-"Black"
-      
-      chessV$Win<-"Loss"
-      chessV$Win[chessV$Winner == "White" | chessV$Winner == "Black"]<-"Win"
-      chessV$Win[chessV$Result == "1/2-1/2"]<-"Draw"
-      
-      chessH$Win<-"Loss"
-      chessH$Win[chessH$Winner == "White" | chessH$Winner == "Black"]<-"Win"
-      chessH$Win[chessH$Result == "1/2-1/2"]<-"Draw"
-      
-      chessV$UserELO<-NA
-      chessV$UserELO<-ifelse(chessV$White=="imvahn",chessV$WhiteElo,chessV$UserELO)
-      chessV$UserELO<-ifelse(chessV$Black=="imvahn",chessV$BlackElo,chessV$UserELO)
-      chessV$Date<-as.Date(chessV$Date)
-      chessV$UserELO<-as.numeric(chessV$UserELO)
-      
-      chessH$UserELO<-NA
-      chessH$UserELO<-ifelse(chessH$White=="Hikaru",chessH$WhiteElo,chessH$UserELO)
-      chessH$UserELO<-ifelse(chessH$Black=="Hikaru",chessH$BlackElo,chessH$UserELO)
-      chessH$Date<-as.Date(chessH$Date)
-      chessH$UserELO<-as.numeric(chessH$UserELO)
-      
-      ui <- fluidPage(
-        titlePanel("User Elo Over Time by Time Class"),
-        sidebarLayout(
-          sidebarPanel(
-            selectInput(
-              inputId="gamemode",
-              label="Choose a Time Class",
-              choices=c("bullet","blitz","rapid"),
-              selected="blitz",
-              multiple=TRUE)),
-          mainPanel(
-            plotOutput("Vahn3"),
-            plotOutput("Hikaru3"))))
-      
-      server<-function(input,output){
-        output$Vahn3<-renderPlot({
-          ggplot(chessV%>%
-                   filter(Date>="2023-02-11")%>%
-                   filter(TimeClass==input$gamemode))+
-            geom_line(aes(x=Date,y=UserELO,color=TimeClass))+
-            ylim(c(0,3500))+
-            labs(y="User Elo",
-                 title="Vahn",
-                 color="Time Class")+
-            scale_color_brewer(palette="Accent")})
-        output$Hikaru3<-renderPlot({
-          ggplot(chessH%>%
-                   filter(TimeClass==input$gamemode))+
-            geom_line(aes(x=Date,y=UserELO,color=TimeClass))+
-            ylim(c(0,3500))+
-            labs(y="User Elo",
-                 title="Hikaru",
-                 color="Time Class")+
-            scale_color_brewer(palette="Accent")})}
-      
-      shinyApp(ui=ui,server=server)
-                          </code>
-                      </pre>
+                              <code class="language-r">
+          chessV <- get_raw_chessdotcom(usernames = "imvahn", year_month = c(202302:202304))
+          chessH <- get_raw_chessdotcom(usernames = "Hikaru", year_month = c(202302:202304))
+          
+          chessV$nMoves<-return_num_moves(moves_string=chessV$Moves)
+          chessV%>%
+            filter(Event=="Live Chess")->chessV
+          chessV<-chessV[!is.na(chessV$ECO),]
+          chessV$Winner<-NA
+          chessV$Winner[chessV$White == "imvahn" & chessV$Result == "1-0"]<-"White"
+          chessV$Winner[chessV$Black == "imvahn" & chessV$Result == "0-1"]<-"Black"
+          
+          chessH$nMoves<-return_num_moves(moves_string=chessH$Moves)
+          chessH%>%
+            filter(Event=="Live Chess")->chessH
+          chessH<-chessH[!is.na(chessH$ECO),]
+          chessH$Winner<-NA
+          chessH$Winner[chessH$White == "Hikaru" & chessH$Result == "1-0"]<-"White"
+          chessH$Winner[chessH$Black == "Hikaru" & chessH$Result == "0-1"]<-"Black"
+          
+          chessV$Win<-"Loss"
+          chessV$Win[chessV$Winner == "White" | chessV$Winner == "Black"]<-"Win"
+          chessV$Win[chessV$Result == "1/2-1/2"]<-"Draw"
+          
+          chessH$Win<-"Loss"
+          chessH$Win[chessH$Winner == "White" | chessH$Winner == "Black"]<-"Win"
+          chessH$Win[chessH$Result == "1/2-1/2"]<-"Draw"
+          
+          chessV$UserELO<-NA
+          chessV$UserELO<-ifelse(chessV$White=="imvahn",chessV$WhiteElo,chessV$UserELO)
+          chessV$UserELO<-ifelse(chessV$Black=="imvahn",chessV$BlackElo,chessV$UserELO)
+          chessV$Date<-as.Date(chessV$Date)
+          chessV$UserELO<-as.numeric(chessV$UserELO)
+          
+          chessH$UserELO<-NA
+          chessH$UserELO<-ifelse(chessH$White=="Hikaru",chessH$WhiteElo,chessH$UserELO)
+          chessH$UserELO<-ifelse(chessH$Black=="Hikaru",chessH$BlackElo,chessH$UserELO)
+          chessH$Date<-as.Date(chessH$Date)
+          chessH$UserELO<-as.numeric(chessH$UserELO)
+          
+          ui <- fluidPage(
+            titlePanel("User Elo Over Time by Time Class"),
+            sidebarLayout(
+              sidebarPanel(
+                selectInput(
+                  inputId="gamemode",
+                  label="Choose a Time Class",
+                  choices=c("bullet","blitz","rapid"),
+                  selected="blitz",
+                  multiple=TRUE)),
+              mainPanel(
+                plotOutput("Vahn3"),
+                plotOutput("Hikaru3"))))
+          
+          server<-function(input,output){
+            output$Vahn3<-renderPlot({
+              ggplot(chessV%>%
+                       filter(Date>="2023-02-11")%>%
+                       filter(TimeClass==input$gamemode))+
+                geom_line(aes(x=Date,y=UserELO,color=TimeClass))+
+                ylim(c(0,3500))+
+                labs(y="User Elo",
+                     title="Vahn",
+                     color="Time Class")+
+                scale_color_brewer(palette="Accent")})
+            output$Hikaru3<-renderPlot({
+              ggplot(chessH%>%
+                       filter(TimeClass==input$gamemode))+
+                geom_line(aes(x=Date,y=UserELO,color=TimeClass))+
+                ylim(c(0,3500))+
+                labs(y="User Elo",
+                     title="Hikaru",
+                     color="Time Class")+
+                scale_color_brewer(palette="Accent")})}
+          
+          shinyApp(ui=ui,server=server)
+                              </code>
+                          </pre>
         </div>
       </div>
       <div class="text">
         <p>
-          This visualization maps Elo in a time series from February to the end of
-          April. Elo is a rating system used to calculate the relative skill levels of
+          <b>This visualization maps Elo in a time series from February to the end of
+            April.</b> Elo is a rating system used to calculate the relative skill levels of
           players in a zero-sum game; that is to say, a game where one side losing means
           the other side wins. Every time class has its own Elo, which means that
           players can be rated differently for different modes. After playing hundreds of
@@ -691,85 +695,85 @@
         <div class="visualization-area"></div>
         <div class="code-container">
           <pre>
-                          <code class="language-r">
-      ui <- fluidPage(
-        titlePanel("Chloropleth of Top 50 Players by Time Class"),
-        sidebarLayout(
-          sidebarPanel(
-            selectInput(
-              inputId="gamemode",
-              label="Choose a Time Class",
-              choices=c("live_bullet","live_blitz","live_rapid"),
-              selected="live_blitz")),
-          mainPanel(
-            plotOutput("Map"))))
-      
-      server<-function(input,output){
-        output$Map<-renderPlot({
-          daily_leaders <- chessdotcom_leaderboard(game_type = input$gamemode)
-          daily_leaders%>%
-            mutate(region=gsub(pattern="https://api.chess.com/pub/country/","",country))->daily_leaders
-          daily_leaders%>%
-            mutate(region = gsub(pattern = "US","USA",region))->daily_leaders
-          daily_leaders%>%
-            mutate(region = gsub(pattern="XE","UK",region),
-                   region = gsub(pattern="WS","Samoa",region),
-                   region = gsub(pattern="NO","Norway",region),
-                   region = gsub(pattern="CL","Chile",region),
-                   region = gsub(pattern="RU","Russia",region),
-                   region = gsub(pattern="FR","France",region),
-                   region = gsub(pattern="UA","Ukraine",region),
-                   region = gsub(pattern="NL","Netherlands",region),
-                   region = gsub(pattern="AU","Australia",region),
-                   region = gsub(pattern="AZ","Azerbaijan",region),
-                   region = gsub(pattern="BY","Belarus",region),
-                   region = gsub(pattern="CN","China",region),
-                   region = gsub(pattern="DE","Denmark",region),
-                   region = gsub(pattern="GR","Germany",region),
-                   region = gsub(pattern="IN","India",region),
-                   region = gsub(pattern="PE","Peru",region),
-                   region = gsub(pattern="PL","Poland",region),
-                   region = gsub(pattern="RO","Romania",region),
-                   region = gsub(pattern="VN","Vietnam",region),
-                   region = gsub(pattern="RS","Serbia",region),
-                   region = gsub(pattern="CZ","Czech Republic",region),
-                   region = gsub(pattern="AE","United Arab Emirates",region),
-                   region = gsub(pattern="CA","Canada",region),
-                   region = gsub(pattern="IM","Isle of Man",region),
-                   region = gsub(pattern="UZ","Uzbekistan",region),
-                   region = gsub(pattern="GE","Georgia",region),
-                   region = gsub(pattern="ES","Spain",region),
-                   region = gsub(pattern="GI","Gibraltar",region),
-                   region = gsub(pattern="UY","Uruguay",region),
-                   region = gsub(pattern="IR","Iran",region),
-                   region = gsub(pattern="BR","Brazil",region),
-                   region = gsub(pattern="AR","Argentina",region),
-                   region = gsub(pattern="ZW","Zimbabwe",region),
-                   region = gsub(pattern="TR","Turkey",region),
-                   region = gsub(pattern="CO","Colombia",region),
-                   region = gsub(pattern="HR","Croatia",region),
-                   region = gsub(pattern="KZ","Kazakhstan",region),
-                   region = gsub(pattern="AM","Armenia",region),
-                   region = gsub(pattern="PG","Papua New Guinea",region),
-                   region = gsub(pattern="EG","Egypt",region))->daily_leaders
-          daily_leaders%>%
-            select(username,name,region)->daily_map
-          daily_map%>%
-            count(region)->daily_map
-          ggplot()+
-            geom_map(data=mapdata, aes(map_id=region),
-                     map=mapdata, fill="gray", color="black")+
-            geom_map(data=daily_map, aes(map_id=region, fill=n), map= mapdata)+
-            expand_limits(x=mapdata$long, y=mapdata$lat)+
-            labs(x="",
-                 y="",
-                 title="",
-                 fill="Number of Players")+
-            scale_fill_distiller(palette="GnBu",direction=1)})}
-      
-      shinyApp(ui=ui, server=server)
-                          </code>
-                      </pre>
+                              <code class="language-r">
+          ui <- fluidPage(
+            titlePanel("Chloropleth of Top 50 Players by Time Class"),
+            sidebarLayout(
+              sidebarPanel(
+                selectInput(
+                  inputId="gamemode",
+                  label="Choose a Time Class",
+                  choices=c("live_bullet","live_blitz","live_rapid"),
+                  selected="live_blitz")),
+              mainPanel(
+                plotOutput("Map"))))
+          
+          server<-function(input,output){
+            output$Map<-renderPlot({
+              daily_leaders <- chessdotcom_leaderboard(game_type = input$gamemode)
+              daily_leaders%>%
+                mutate(region=gsub(pattern="https://api.chess.com/pub/country/","",country))->daily_leaders
+              daily_leaders%>%
+                mutate(region = gsub(pattern = "US","USA",region))->daily_leaders
+              daily_leaders%>%
+                mutate(region = gsub(pattern="XE","UK",region),
+                       region = gsub(pattern="WS","Samoa",region),
+                       region = gsub(pattern="NO","Norway",region),
+                       region = gsub(pattern="CL","Chile",region),
+                       region = gsub(pattern="RU","Russia",region),
+                       region = gsub(pattern="FR","France",region),
+                       region = gsub(pattern="UA","Ukraine",region),
+                       region = gsub(pattern="NL","Netherlands",region),
+                       region = gsub(pattern="AU","Australia",region),
+                       region = gsub(pattern="AZ","Azerbaijan",region),
+                       region = gsub(pattern="BY","Belarus",region),
+                       region = gsub(pattern="CN","China",region),
+                       region = gsub(pattern="DE","Denmark",region),
+                       region = gsub(pattern="GR","Germany",region),
+                       region = gsub(pattern="IN","India",region),
+                       region = gsub(pattern="PE","Peru",region),
+                       region = gsub(pattern="PL","Poland",region),
+                       region = gsub(pattern="RO","Romania",region),
+                       region = gsub(pattern="VN","Vietnam",region),
+                       region = gsub(pattern="RS","Serbia",region),
+                       region = gsub(pattern="CZ","Czech Republic",region),
+                       region = gsub(pattern="AE","United Arab Emirates",region),
+                       region = gsub(pattern="CA","Canada",region),
+                       region = gsub(pattern="IM","Isle of Man",region),
+                       region = gsub(pattern="UZ","Uzbekistan",region),
+                       region = gsub(pattern="GE","Georgia",region),
+                       region = gsub(pattern="ES","Spain",region),
+                       region = gsub(pattern="GI","Gibraltar",region),
+                       region = gsub(pattern="UY","Uruguay",region),
+                       region = gsub(pattern="IR","Iran",region),
+                       region = gsub(pattern="BR","Brazil",region),
+                       region = gsub(pattern="AR","Argentina",region),
+                       region = gsub(pattern="ZW","Zimbabwe",region),
+                       region = gsub(pattern="TR","Turkey",region),
+                       region = gsub(pattern="CO","Colombia",region),
+                       region = gsub(pattern="HR","Croatia",region),
+                       region = gsub(pattern="KZ","Kazakhstan",region),
+                       region = gsub(pattern="AM","Armenia",region),
+                       region = gsub(pattern="PG","Papua New Guinea",region),
+                       region = gsub(pattern="EG","Egypt",region))->daily_leaders
+              daily_leaders%>%
+                select(username,name,region)->daily_map
+              daily_map%>%
+                count(region)->daily_map
+              ggplot()+
+                geom_map(data=mapdata, aes(map_id=region),
+                         map=mapdata, fill="gray", color="black")+
+                geom_map(data=daily_map, aes(map_id=region, fill=n), map= mapdata)+
+                expand_limits(x=mapdata$long, y=mapdata$lat)+
+                labs(x="",
+                     y="",
+                     title="",
+                     fill="Number of Players")+
+                scale_fill_distiller(palette="GnBu",direction=1)})}
+          
+          shinyApp(ui=ui, server=server)
+                              </code>
+                          </pre>
         </div>
       </div>
       <div class="text">
@@ -779,9 +783,10 @@
           inaccessible to many depending on the location, the cost of gear,
           and how many friends are available, chess can be
           played by anyone anywhere. Thus, it has had large international impact, with
-          chess masters originating from countries around the globe. Both Hikaru and I
-          are Americans, so I wanted to see how great players are represented
-          internationally.
+          chess masters originating from countries around the globe. <b>In this visualization I wanted to see how
+            great
+            players are represented
+            internationally.</b>
           <br><br>
           While the United States definitely hosts a majority of top players, masters
           can be seen across the map. Interestingly, a much greater majority of top bullet
@@ -822,30 +827,6 @@
     <h1>Music Time</h1>
     <iframe src="https://itch.io/embed/2323037" width="552" height="167" frameborder="0"><a
         href="https://vahnk.itch.io/musictime-v1">MusicTime v1 by vahnk</a></iframe>
-    <p>
-      Music Time is a 2D platformer with original music and unique music-based mechanics. It was made in three weeks.
-      My contributions:
-    <ul>
-      <li>Creation and recording of the level music
-      </li>
-      <li>Instrument-specific game mechanics
-      </li>
-      <li>Level transitions and animations
-      </li>
-      <li>Level design
-      </li>
-      <li>General polishing and cosmetics
-      </li>
-    </ul>
-    </p>
-    <div class="space"></div>
-    <h1>Virtual Escape Room</h1>
-    <iframe height="167" frameborder="0" src="https://itch.io/embed/2445407" width="552"><a
-        href="https://vahnk.itch.io/game-design-final">Failed Musician Escape Room by vahnk</a></iframe>
-    <p>
-      Failed Musician Escape Room is a virtual escape room about a musician who needs to get his life together and
-      write some music. The player completes several puzzles with the end goal of writing a song. It was made in four
-      weeks. My contributions:
     <ul>
       <li>Interaction mechanics (press E to open, close, etc.)</li>
       <li>Pick up/carry objects mechanics</li>
@@ -856,51 +837,12 @@
       <li>Apartment design</li>
       <li>Props</li>
     </ul>
-    <br>
-    Note: the game is not designed for web, and as such there are several minor glitches that occur when playing through
-    itch.io (mouse cursor leaves the game even when in fullscreen, quit button freezes the game). For the best
-    experience, download the build linked in my <a href="https://github.com/imvahn/GameDesignFinal2023"
-      class="underline" target="_blank">GitHub</a>.
-    <br>
-    <br>
-    Walkthrough:
-    <ol>
-      <li>Read texts from your girlfriend.</li>
-      <li>Pick up beer bottles in the bedroom and throw them out</li>
-      <li>Read "Emails to my Love" on the living room table, the highlighted music notes correspond to the computer
-        password</li>
-      <li>Computer password: DGBCG</li>
-      <li>Find the remote in the kitchen drawer to the left of the oven and turn on the TV</li>
-      <li>Find the key in the box in the hallway and unlock the fridge</li>
-      <li>Open the leftmost bathroom cabinet to find the box of cigarettes</li>
-      <li>Fill in the missing lyrics: "Cigarettes", "guitar picks", "energy drinks", "Pookie"</li>
-      <li>The number of each of the four items found around the room corresponds to the numbers on the keypad next to
-        the music room door, and the order of these numbers is determined by the order of the missing lyrics</li>
-      <li>Keypad code: 1824</li>
-      <li>Take the inspiration pills in the right drawer of the desk in the music room</li>
-      <li>The letters in front of the computer, TV, fridge and bathroom cabinet are the letters of the chords that
-        correspond to each of the four items mentioned in the song</li>
-      <li>Fill in the chords with their respective items in the sheet music on the piano: G, Bb, A, F</li>
-    </ol>
-    </p>
   </div>
   <div class="article">
-    <h1>My Website!</h1>
-    <p>
-      This website was my first experiment in the world of web design, and it definitely won't be my last. I've
-      discovered more than I could have ever imagined throughout this process. Below is a list of the skills and
-      features I've learned:
-    <ul>
-      <li>Languages: HTML, CSS and JavaScript (duh!) as well as some SCSS and pen</li>
-      <li>JavaScript libraries: GSAP, Prism, ScrollReveal, JQuery</li>
-      <li>Web app hosting: ShinyApps, itch.io</li>
-    </ul>
-    You might get a better grasp of the skills I've developed by browsing my website more ;)
-    </p>
-  </div>
-</div>
 
-<script src="sidebar.js"></script>
-<script src="prism.js"></script>
-<script src="gsap.min.js"></script>
-<script src="test.js"></script>
+  </div>
+
+  <script src="sidebar.js"></script>
+  <script src="prism.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="test.js"></script>

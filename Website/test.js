@@ -1,5 +1,3 @@
-
-
 console.clear();
 let targets = document.querySelectorAll("li");
 let articles = document.querySelectorAll(".article");
@@ -21,6 +19,7 @@ gsap.set(".slider", { x: targets[0].offsetLeft, width: targets[0].offsetWidth })
 gsap.set(targets[0], { color: "#fff" });
 gsap.set(".article-block", { height: heights[0] });
 
+
 function doCoolStuff() {
     // check if clicked target is new and if the timeline is currently active
     if (this.index != activeTab) {
@@ -37,7 +36,7 @@ function doCoolStuff() {
         animation.to(targets[old], { color: "black", ease: "none" }, 0);
         animation.to(targets[activeTab], { color: "#fff", ease: "none" }, 0);
         // slide current article down out of view and then set it to starting position at top
-        animation.to(articles[old], { y: heights[old], ease: "back.in" }, 0);
+        animation.to(articles[old], { y: heights[old], ease: "power2.in" }, 0);
         animation.set(articles[old], { y: -heights[old] });
         // resize article block to accommodate new content
         animation.to(".article-block", { height: heights[activeTab] });

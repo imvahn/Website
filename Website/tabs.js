@@ -13,6 +13,7 @@ for (let i = 0; i < targets.length; i++) {
     gsap.set(articles[i], { top: 0, y: -heights[i] }); // push all articles up out of view
     targets[i].addEventListener("click", doCoolStuff);
 }
+
 // set initial article and position bubble slider on first tab 
 gsap.set(articles[0], { y: 0 });
 gsap.set(".slider", { x: targets[0].offsetLeft, width: targets[0].offsetWidth });
@@ -35,11 +36,11 @@ function doCoolStuff() {
         animation.to(targets[old], { color: "black", ease: "none" }, 0);
         animation.to(targets[activeTab], { color: "#fff", ease: "none" }, 0);
         // slide current article down out of view and then set it to starting position at top
-        animation.to(articles[old], { y: heights[old], ease: "back.in" }, 0);
+        animation.to(articles[old], { y: heights[old], ease: "power2.in" }, 0);
         animation.set(articles[old], { y: -heights[old] });
         // resize article block to accommodate new content
         animation.to(".article-block", { height: heights[activeTab] });
         // slide in new article
-        animation.to(articles[activeTab], { duration: 1, y: 0, ease: "elastic" }, "-=0.25");
+        animation.to(articles[activeTab], { duration: 1, y: 0, ease: "circ" }, "-=0.25");
     }
 }
