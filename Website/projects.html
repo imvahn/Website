@@ -100,7 +100,8 @@
       <div class="title">VISUALIZATION 1</div>
       <section class="section-1">
         <div class="visualization">
-          <div class="visualization-area"></div>
+          <iframe height="70%" width="100%" frameborder="no" src="about:blank">
+          </iframe>
           <div class="code-container">
             <pre>
                           <code class="language-r">
@@ -232,7 +233,8 @@ shinyApp(ui = ui, server = server)
       <div class="title">VISUALIZATION 2</div>
       <section class="section-02">
         <div class="visualization">
-          <div class="visualization-area"></div>
+          <iframe height="70%" width="100%" frameborder="no" src="about:blank">
+          </iframe>
           <div class="code-container">
             <pre>
                           <code class="language-r">
@@ -597,7 +599,8 @@ shinyApp(ui=ui,server=server)
       <div class="title">VISUALIZATION 4</div>
       <section class="section-04">
         <div class="visualization">
-          <div class="visualization-area"></div>
+          <iframe height="70%" width="100%" frameborder="no" src="about:blank">
+          </iframe>
           <div class="code-container">
             <pre>
                           <code class="language-r">
@@ -714,7 +717,8 @@ shinyApp(ui=ui,server=server)
       <div class="title">VISUALIZATION 5</div>
       <section class="section-05">
         <div class="visualization">
-          <div class="visualization-area"></div>
+          <iframe height="70%" width="100%" frameborder="no" src="about:blank">
+          </iframe>
           <div class="code-container">
             <pre>
                           <code class="language-r">
@@ -927,6 +931,25 @@ shinyApp(ui=ui, server=server)
   </div>
   <div class="space"></div>
 
+  <script>
+    window.addEventListener('load', function () {
+      // Array containing the URLs for your iframes
+      var iframeUrls = [
+        'https://vahn.shinyapps.io/FirstVisualization/',
+        'https://vahn.shinyapps.io/SecondVisualization/',
+        'https://vahn.shinyapps.io/FourthVisualization/',
+        'https://vahn.shinyapps.io/FifthVisualization/',
+        'https://itch.io/embed/2323037',
+        'https://itch.io/embed/2445407'
+      ];
+
+      // Loop through each iframe and set the src attribute
+      var iframes = document.querySelectorAll('iframe');
+      for (var i = 0; i < iframes.length; i++) {
+        iframes[i].src = iframeUrls[i];
+      }
+    });
+  </script>
   <script src="sidebar.js"></script>
   <script src="prism.js"></script>
   <script src="gsap.min.js"></script>

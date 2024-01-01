@@ -1,0 +1,13 @@
+name: FifthVisualization
+title: FifthVisualization
+username: vahn
+account: vahn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10856916
+bundleId: 8098015
+url: https://vahn.shinyapps.io/FifthVisualization/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 1.R|2.R|4.R

@@ -1,9 +1,18 @@
+require(chessR)
 require(ggplot2)
 require(dplyr)
 require(reshape2)
 require(plotly)
 require(maps)
 require(lubridate)
+require(chess)
+require(rchess)
+require(shiny)
+require(chess.com)
+require(bigchess)
+require(tidyr)
+
+mapdata <- map_data("world")
 
 ui <- fluidPage(
   titlePanel("Chloropleth of Top 50 Players by Time Class"),
@@ -81,3 +90,4 @@ server<-function(input,output){
       scale_fill_distiller(palette="GnBu",direction=1)})}
 
 shinyApp(ui=ui, server=server)
+
