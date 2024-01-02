@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body class="projects">
   <!-- Sidebar -->
   <div class="menu">
     <span class="items">
@@ -39,12 +39,15 @@
     <span></span>
   </div>
   <!--  -->
-  <ul class="tabs-block">
-    <div class="slider"></div>
-    <li>Data Visualization</li>
-    <li>Game Design</li>
-    <li>Web Design</li>
-  </ul>
+  <div class="white-rectangle"></div>
+  <nav>
+    <ul class="tabs-block">
+      <div class="slider"></div>
+      <li>Data Visualization</li>
+      <li>Game Design</li>
+      <li>Web Design</li>
+    </ul>
+  </nav>
 
   <div class="article-block">
     <div class="article">
@@ -954,6 +957,27 @@ shinyApp(ui=ui, server=server)
   <script src="prism.js"></script>
   <script src="gsap.min.js"></script>
   <script src="tabs.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const rectangle = document.querySelector(".white-rectangle");
+      const articleBlock = document.querySelector(".article-block");
+
+      // Calculate the distance between the top of the screen and the top of article-block
+      const articleBlockTop = articleBlock.offsetTop;
+
+      // Set the height of the nav element
+      rectangle.style.height = articleBlockTop + "px";
+    });
+  </script>
+  <script>
+    // Get all elements with class 'menu' and 'items'
+    const menuItems = document.querySelectorAll('.menu .items a');
+
+    // Loop through each matched element and set its color to black
+    menuItems.forEach(item => {
+      item.style.color = 'white';
+    });
+  </script>
 
 </body>
 

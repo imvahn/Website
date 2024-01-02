@@ -49,3 +49,11 @@ section {
 a.underline {
     text-decoration: underline;
 }
+
+.space {
+    padding: 50px;
+}
+
+.smallspace {
+    padding: 25px;
+}

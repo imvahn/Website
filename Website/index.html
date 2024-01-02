@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body class="home">
     <section class="section-1">
         <div class="text-container">
             <p style="font-size: 50px;">Vahn Kessler</p>
@@ -143,6 +143,15 @@
     <script src="indexpage.js"></script>
     <script src="scrollreveal.js"></script>
     <script src="animate.js"></script>
+    <script>
+        // Get all elements with class 'menu' and 'items'
+        const menuItems = document.querySelectorAll('.menu .items a');
+
+        // Loop through each matched element and set its color to black
+        menuItems.forEach(item => {
+            item.style.color = 'black';
+        });
+    </script>
 
 </body>
 
