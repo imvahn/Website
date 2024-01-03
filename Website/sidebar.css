@@ -44,8 +44,8 @@
 
     .home &.active>span::before,
     .home &.active>span::after {
-    background: black;
-    top: 0%;
+        background: black;
+        top: 0%;
     }
 
     .projects &.active>span::before,
@@ -88,13 +88,11 @@
     @media only screen {
         width: 25%;
         right: -25%;
-        /* Changed to position on the right */
         padding: 0;
     }
 
     &.active {
         right: 2.5%;
-        /* Changed to position on the right */
     }
 
     .items {
@@ -135,11 +133,8 @@
     top: 80%;
     right: 0;
     bottom: -2px;
-    /* Adjust the position as needed */
     height: 2px;
-    /* Set the height of the underline */
     background-color: black;
-    /* Color of the underline */
     transform-origin: bottom left;
     transform: scaleX(0);
     /* Initially hide the underline */
@@ -153,11 +148,8 @@
     top: 80%;
     right: 0;
     bottom: -2px;
-    /* Adjust the position as needed */
     height: 2px;
-    /* Set the height of the underline */
     background-color: white;
-    /* Color of the underline */
     transform-origin: bottom left;
     transform: scaleX(0);
     /* Initially hide the underline */

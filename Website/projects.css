@@ -31,11 +31,8 @@ section {
     width: 50%;
     overflow-y: auto;
     border: 1px solid #ccc;
-    /* Adding a 1px solid border */
     border-radius: 8px;
-    /* Rounding the corners */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    /* Adding a drop shadow */
     position: absolute;
     bottom: 0;
 }
@@ -48,12 +45,4 @@ section {
 
 a.underline {
     text-decoration: underline;
-}
-
-.space {
-    padding: 50px;
-}
-
-.smallspace {
-    padding: 25px;
 }

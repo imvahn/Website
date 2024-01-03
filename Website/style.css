@@ -20,3 +20,11 @@ a:visited {
         color: black;
         /* Change color for visited links */
 }
+
+.space {
+        padding: 50px;
+}
+
+.smallspace {
+        padding: 25px;
+}
