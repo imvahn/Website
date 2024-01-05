@@ -75,7 +75,7 @@
     /* Changed to position on the right */
     z-index: 998;
     color: black;
-    width: 30%;
+    width: 20%;
     /* Width of the menu */
     height: 100%;
     display: flex;
@@ -86,7 +86,7 @@
     transition: 500ms right cubic-bezier(0.77, 0, 0.175, 1);
 
     @media only screen {
-        width: 25%;
+        width: 10%;
         right: -25%;
         padding: 0;
     }
@@ -109,10 +109,10 @@
         content: '';
         position: absolute;
         top: 50%;
-        right: 50%;
+        right: 100%;
         transform: translate(100%, -50%);
         width: 200%;
-        height: 200%;
+        height: 150%;
         border-radius: 50%;
         background-color: black;
         z-index: 990;

@@ -30,6 +30,12 @@ section {
     flex-wrap: wrap;
 }
 
+.section-3 {
+    justify-content: center;
+    align-items: top;
+    height: auto;
+}
+
 .container {
     width: 50%;
     height: 50%;
@@ -96,4 +102,27 @@ ul {
 
 li {
     margin-bottom: .75%;
+}
+
+.links {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    border-radius: 100px;
+    width: 50vw;
+    height: auto;
+    margin: 50px auto;
+    position: relative;
+}
+
+.links li {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    flex: auto;
+    font-size: 24px;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    list-style: none;
 }
