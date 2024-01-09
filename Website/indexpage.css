@@ -44,14 +44,6 @@ section {
     padding: 5%;
 }
 
-@media screen and (max-width: 768px) {
-
-    .container {
-        width: 100%;
-        height: 75%;
-    }
-}
-
 .text-container {
     position: absolute;
     text-align: center;
@@ -80,7 +72,7 @@ section {
 }
 
 .info-title small {
-    font-size: 10px;
+    font-size: 1em;
 }
 
 .info {
@@ -120,9 +112,17 @@ li {
     margin: 0;
     padding: 10px;
     flex: auto;
-    font-size: 24px;
+    font-size: 1.5em;
     color: black;
     position: relative;
     cursor: pointer;
     list-style: none;
+}
+
+@media screen and (max-width: 80rem) and (max-height: 170rem) {
+
+    .container {
+        width: 100%;
+        height: 75vh;
+    }
 }
