@@ -41,7 +41,7 @@ section {
     height: 50%;
     box-sizing: border-box;
     position: relative;
-    padding: 5%;
+    padding: 2%;
 }
 
 @media screen and (max-width: 768px) {
