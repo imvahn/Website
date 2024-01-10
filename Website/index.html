@@ -185,6 +185,29 @@
         </object> -->
 
     <!-- Scripts -->
+    <script>
+        function checkWindowHeight() {
+            const windowHeight = window.innerHeight;
+            const screenHeight = screen.height;
+
+            if (windowHeight <= screenHeight / 2) {
+                document.querySelector('.container').classList.add('full-height');
+                document.querySelector('.section-3').classList.add('full-height');
+                document.querySelector('.links').classList.add('full-height');
+            } else {
+                document.querySelector('.container').classList.remove('full-height');
+                document.querySelector('.section-3').classList.remove('full-height');
+                document.querySelector('.links').classList.remove('full-height');
+            }
+        }
+
+        // Run the check initially
+        checkWindowHeight();
+
+        // Run the check when the window is resized
+        window.addEventListener('resize', checkWindowHeight);
+
+    </script>
     <script src="sidebar.js"></script>
     <script src="gsap-latest-beta.min.js"></script>
     <script src="ScrollTrigger.min.js"></script>
