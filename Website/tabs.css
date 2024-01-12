@@ -9,12 +9,6 @@ body {
     min-height: 101vh;
 }
 
-.home {
-    position: fixed;
-    left: 5%;
-    z-index: 11;
-}
-
 nav {
     position: sticky;
     top: 50px;

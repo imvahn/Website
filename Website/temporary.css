@@ -1,0 +1,10 @@
+.temporary {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    z-index: 999;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

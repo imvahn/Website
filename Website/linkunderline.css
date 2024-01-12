@@ -36,9 +36,9 @@
 
  /* temporary */
 
- .home a,
- .home a:link,
- .home a:visited {
+ .temporary a,
+ .temporary a:link,
+ .temporary a:visited {
      color: black;
      text-decoration: none;
      position: relative;
@@ -46,7 +46,7 @@
      font-weight: bold;
  }
 
- .home a::before {
+ .temporary a::before {
      content: "";
      position: absolute;
      width: 100%;
@@ -63,6 +63,6 @@
      the style of the animation. */
  }
 
- .home a:hover::before {
+ .temporary a:hover::before {
      background-size: 100% .1em;
  }
