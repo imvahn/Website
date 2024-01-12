@@ -84,7 +84,7 @@ section {
 }
 
 .info-title small {
-    font-size: 1em;
+    font-size: .5em;
 }
 
 .info {
@@ -96,6 +96,10 @@ section {
 }
 
 .info-3 {
+    margin-left: 5%;
+}
+
+.info-4 {
     margin-left: 5%;
 }
 
