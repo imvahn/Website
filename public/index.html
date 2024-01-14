@@ -42,14 +42,12 @@
 
         <div class="text-container">
             <p style="font-size: 50px;">Vahn Kessler</p>
-            <p style="font-size: 30px;">Triple Major in: Computer Science, Mathematics, Music<br>at Wesleyan
-                University
+            <p style="font-size: 30px;">Triple Major in: Computer Science, Mathematics, Music<br>at Wesleyan University
             </p>
         </div>
         <div class="down-arrow"></div>
-        <div class="space"></div>
     </section>
-    <section class="section-2" data-color="white black">
+    <section class="section-2">
         <div class="container">
             <h1 class="section-title">EDUCATION</h1>
             <div class="info">
@@ -180,13 +178,16 @@
             </div>
         </div>
     </section>
-    <section class="section-3" data-color="white black">
+    <section class="section-3">
         <ul class="links">
-            <li><a href="https://www.linkedin.com/in/vahn" target="_blank">LINKEDIN</a>
+            <li>
+                <a href="https://www.linkedin.com/in/vahn" target="_blank">LINKEDIN</a>
             </li>
-            <li><a href="https://www.github.com/imvahn" target="_blank">GITHUB</a>
+            <li>
+                <a href="https://www.github.com/imvahn" target="_blank">GITHUB</a>
             </li>
-            <li><a href="Resume.pdf">RESUME</a>
+            <li>
+                <a href="Resume.pdf">RESUME</a>
             </li>
         </ul>
     </section>
@@ -198,44 +199,11 @@
         </object> -->
 
     <!-- Scripts -->
-    <script>
-        function checkWindowHeight() {
-            const windowHeight = window.innerHeight;
-            const screenHeight = screen.height;
 
-            if (windowHeight <= screenHeight / 2) {
-                document.querySelector('.container').classList.add('full-height');
-                document.querySelector('.section-3').classList.add('full-height');
-                document.querySelector('.links').classList.add('full-height');
-            } else {
-                document.querySelector('.container').classList.remove('full-height');
-                document.querySelector('.section-3').classList.remove('full-height');
-                document.querySelector('.links').classList.remove('full-height');
-            }
-        }
-
-        // Run the check initially
-        checkWindowHeight();
-
-        // Run the check when the window is resized
-        window.addEventListener('resize', checkWindowHeight);
-
-    </script>
     <!-- <script src="sidebar.js"></script> -->
-    <script src="gsap-latest-beta.min.js"></script>
-    <script src="ScrollTrigger.min.js"></script>
     <script src="indexpage.js"></script>
     <script src="scrollreveal.js"></script>
     <script src="animate.js"></script>
-    <script>
-        // Get all elements with class 'menu' and 'items'
-        const menuItems = document.querySelectorAll('.menu .items a');
-
-        // Loop through each matched element and set its color to black
-        menuItems.forEach(item => {
-            item.style.color = 'black';
-        });
-    </script>
 
 </body>
 
