@@ -1,10 +1,14 @@
 .temporary {
     position: fixed;
-    top: 3%;
-    right: 3%;
+    top: 0;
+    right: 2%;
     z-index: 999;
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.home .temporary {
+    top: 19px;
 }

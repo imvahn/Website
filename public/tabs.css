@@ -9,18 +9,18 @@ body {
     min-height: 101vh;
 }
 
-nav {
-    position: sticky;
-    top: 50px;
-    z-index: 10;
+.tabs {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .white-rectangle {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 0;
+    top: 0;
     background-color: rgba(255, 255, 255, 1);
     z-index: 9;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
@@ -28,12 +28,12 @@ nav {
 
 .slider {
     position: absolute;
-    left: 0;
-    top: 0;
+    display: flex;
     background: black;
     /* box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3); */
     border-radius: 100px;
-    height: 100%;
+    height: 40px;
+    left: 0;
 }
 
 .tabs-block {
@@ -42,14 +42,12 @@ nav {
     flex-direction: row;
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
     border-radius: 100px;
-    width: 700px;
-    height: auto;
-    margin: 50px auto;
+    width: 50%;
+    z-index: 9;
 }
 
 li {
     text-align: center;
-    margin: 0;
     padding: 10px;
     flex: auto;
     font-size: 18px;
@@ -68,14 +66,14 @@ h1 {
 }
 
 .article-block {
+    position: relative;
     width: 100%;
-    margin: auto;
+    margin-top: 100px;
     overflow: hidden;
     /* box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.4) inset; */
     /* border-top: 1px solid rgba(0, 0, 0, 1); */
     background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
-    position: relative;
     /* border-radius: 24px; */
 }
 
