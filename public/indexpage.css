@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: white;
     color: black;
@@ -13,23 +17,59 @@ body {
 section {
     position: relative;
     display: flex;
-}
-
-.section-1 {
     height: 100vh;
-    justify-content: center;
-    align-items: center;
 }
 
 .section-2 {
     position: relative;
-    display: flex;
     flex-wrap: wrap;
 }
 
 .section-3 {
     justify-content: center;
     height: auto;
+}
+
+.education {
+    flex: 1;
+    /* Takes up 33% of available space */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.education-item {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    border-radius: 24px;
+}
+
+.education-item li {
+    line-height: 1.5em;
+}
+
+.education-title {
+    margin-top: .5em;
+}
+
+.about-me {
+    flex: 2;
+    /* Takes up 67% of available space */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5%;
+}
+
+.about-me p {
+    font-size: 2em;
 }
 
 .container {
@@ -39,12 +79,32 @@ section {
     padding: 2%;
 }
 
-.text-container {
-    position: absolute;
+.heading {
+    height: 100vh;
+    width: 100vw;
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.links {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    /* Default */
+    justify-content: space-between;
+    padding: 0;
+}
+
+.links li {
+    display: block;
+    flex: 0 1 auto;
+    /* Default */
+    list-style-type: none;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 .content {
@@ -54,16 +114,19 @@ section {
     align-items: left;
 }
 
+.about-title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+
 .section-title {
     font-size: 3em;
 }
 
 .info-title {
     font-size: 1.8em;
-}
-
-.info-content {
-    margin-left: 2%;
 }
 
 .info-title small {
@@ -131,4 +194,53 @@ li {
     .links li {
         padding: 10px;
     }
+}
+
+.navbutton {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1%;
+    display: flex;
+    gap: 3em;
+}
+
+.navbutton a {
+    float: left;
+    display: block;
+    cursor: pointer;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.navbutton a,
+.navbutton a:link,
+.navbutton a:visited {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    font-weight: bold;
+}
+
+.navbutton a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(black, black);
+    background-size: 0 .1em;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    transition: background-size .3s ease-in-out;
+    /* Change the transition timing above
+     to determine how long the animation takes.
+     Change the the timing function to adjust
+     the style of the animation. */
+}
+
+.navbutton a:hover::before {
+    background-size: 100% .1em;
 }

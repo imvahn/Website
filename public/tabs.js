@@ -6,6 +6,8 @@ let old = 0;
 let heights = [];
 let dur = 0.4;
 let animation;
+// Retrieve the global variable from localStorage
+let selectedProject = localStorage.getItem('selectedProject');
 
 // Function to update offsetWidth, offsetLeft and offsetTop values
 function updateOffsets() {
@@ -45,6 +47,15 @@ gsap.set(articles[0], { y: 0 });
 gsap.set(".slider", { x: targets[0].offsetLeft, width: targets[0].offsetWidth, height: targets[0].offsetHeight });
 gsap.set(targets[0], { color: "#fff" });
 gsap.set(".article-block", { height: heights[0] });
+
+// Check Window.selectedProject and set active tab accordingly
+if (selectedProject == 'game') {
+    activeTab = 1;
+    updateArticles();
+    gsap.set(".slider", { x: targets[activeTab].offsetLeft, width: targets[activeTab].offsetWidth, height: targets[activeTab].offsetHeight });
+    gsap.set(targets[0], { color: "black" });
+    gsap.set(targets[activeTab], { color: "#fff" });
+}
 
 // Event listener for window resize
 window.addEventListener("resize", function () {

@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+}
+
+section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: default;
+}
+
+.about {
+  padding: 5%;
+  cursor: default;
+}
+
+.about-me {
+  width: 66%;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 2%;
+  margin-left: 5%;
+  border: 1px solid black;
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.about-me a,
+.about-me a:link,
+.about-me a:visited {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+.about-me a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, black, black);
+  background-size: 0 0.1em;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.3s ease-in-out;
+}
+.about-me a:hover::before {
+  background-size: 100% 0.1em;
+}
+
+.about-me:hover {
+  transform: translateY(5px);
+}
+
+.education {
+  width: 34%;
+  text-align: center;
+  font-size: 1.3em;
+}
+.education .education-item {
+  flex-direction: column;
+  margin-top: 10%;
+  padding: 5%;
+  border: 1px solid black;
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.education .education-item:hover {
+  transform: translateY(5px);
+}
+.education img {
+  width: 20%;
+}
+.education li {
+  list-style: none;
+}
+
+.projects .envelope {
+  display: flex;
+  height: 75%;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-direction: row;
+}
+.projects .envelope .project {
+  flex: 1;
+  margin: 1%;
+  flex-direction: column;
+  text-align: left;
+  padding: 3%;
+  border: 1px solid black;
+  font-size: 20px;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.projects .envelope .project li {
+  font-size: 16px;
+  list-style-type: none;
+}
+.projects .envelope .project:hover {
+  transform: scale(1.02);
+  background-color: rgb(199, 199, 199);
+}
+
+.skills .envelope {
+  display: flex;
+  height: 85%;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-direction: row;
+}
+.skills .container {
+  flex: 1;
+  margin: 1%;
+  flex-direction: column;
+  text-align: center;
+  padding: 3%;
+  border: 1px solid black;
+  font-size: 20px;
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.skills .container h1 {
+  padding-bottom: 1em;
+}
+.skills .container li {
+  list-style-type: none;
+  line-height: 2em;
+}
+.skills .container:hover {
+  transform: translateY(5px);
+}
+
+/*# sourceMappingURL=index.css.map */

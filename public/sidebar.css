@@ -42,12 +42,6 @@
         background: transparent;
     }
 
-    .home &.active>span::before,
-    .home &.active>span::after {
-        background: black;
-        top: 0%;
-    }
-
     .projects &.active>span::before,
     .projects &.active>span::after {
         background: white;
@@ -55,7 +49,7 @@
     }
 
     &.active>span::before {
-        transform: rotate(225deg);
+        transform: rotate(180deg);
         /* Changing the rotation */
     }
 

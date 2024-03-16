@@ -1,47 +1,42 @@
-console.clear();
-let targets = document.querySelectorAll("li");
-let articles = document.querySelectorAll(".article");
-let activeTab = 0;
-let old = 0;
-let heights = [];
-let dur = 0.4;
-let animation;
+const container = document.querySelector(".container");
+const sections = gsap.utils.toArray(".container section");
+const texts = gsap.utils.toArray(".anim");
 
-for (let i = 0; i < targets.length; i++) {
-    targets[i].index = i;
-    heights.push(articles[i].offsetHeight); // get height of each article
-    gsap.set(articles[i], { top: 0, y: -heights[i] }); // push all articles up out of view
-    targets[i].addEventListener("click", doCoolStuff);
-}
-// set initial article and position bubble slider on first tab 
-gsap.set(articles[0], { y: 0 });
-gsap.set(".slider", { x: targets[0].offsetLeft, width: targets[0].offsetWidth });
-gsap.set(targets[0], { color: "#fff" });
-gsap.set(".article-block", { height: heights[0] });
-
-
-function doCoolStuff() {
-    // check if clicked target is new and if the timeline is currently active
-    if (this.index != activeTab) {
-        //if there's an animation in-progress, jump to the end immediately so there aren't weird overlaps. 
-        if (animation && animation.isActive()) {
-            animation.progress(1);
-        }
-        animation = gsap.timeline({ defaults: { duration: 0.4 } });
-        old = activeTab;
-        activeTab = this.index;
-        // animate bubble slider to clicked target
-        animation.to(".slider", { x: targets[activeTab].offsetLeft, width: targets[activeTab].offsetWidth });
-        // change text color on old and new tab targets
-        animation.to(targets[old], { color: "black", ease: "none" }, 0);
-        animation.to(targets[activeTab], { color: "#fff", ease: "none" }, 0);
-        // slide current article down out of view and then set it to starting position at top
-        animation.to(articles[old], { y: heights[old], ease: "power2.in" }, 0);
-        animation.set(articles[old], { y: -heights[old] });
-        // resize article block to accommodate new content
-        animation.to(".article-block", { height: heights[activeTab] });
-        // slide in new article
-        animation.to(articles[activeTab], { duration: 1, y: 0, ease: "elastic" }, "-=0.25");
+let scrollTween = gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".container",
+        pin: true,
+        scrub: 1,
+        end: "+=3000",
+        //snap: 1 / (sections.length - 1),
+        markers: false,
     }
-}
+});
 
+console.log(1 / (sections.length - 1))
+
+// whizz around the sections
+sections.forEach((section) => {
+    // grab the scoped text
+    let text = section.querySelectorAll(".anim");
+
+    // bump out if there's no items to animate
+    if (text.length === 0) return
+
+    // do a little stagger
+    gsap.from(text, {
+        y: -130,
+        opacity: 0,
+        duration: 2,
+        ease: "elastic",
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: section,
+            containerAnimation: scrollTween,
+            start: "left center",
+            markers: false
+        }
+    });
+});
