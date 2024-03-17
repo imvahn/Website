@@ -8,6 +8,8 @@
         Homepage
     </title>
 
+    <!-- <link rel="stylesheet" href="index.scss">
+    <link rel="stylesheet" href="navbar.scss"> -->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="style.css">
@@ -66,7 +68,7 @@
     </section>
     <section class="projects" id="projects">
         <div class="envelope">
-            <div class="project" id="game">
+            <div class="container" id="game">
                 <h1>VIRTUAL ESCAPE ROOM</h1>
                 <p>Developed a 3D virtual escape room in Unity with several puzzles that utilize innovative and creative
                     interactions, a
@@ -85,7 +87,7 @@
                     <li>Props</li>
                 </ul>
             </div>
-            <div class="project" id="game">
+            <div class="container" id="game">
                 <h1>MUSIC TIME</h1>
                 <p>Developed a 2D platformer video game in Unity with unique, music-based level mechanics. Created all
                     the music
@@ -101,7 +103,7 @@
                     <li>General polishing and cosmetics</li>
                 </ul>
             </div>
-            <div class="project" id="dataviz">
+            <div class="container" id="dataviz">
                 <h1>CHESS VISUALIZATIONS</h1>
                 <p>Used R Studio to pull chess.com datasets of the top chess players in the world to make five
                     interactive data
@@ -201,12 +203,14 @@
         }
 
         // Add click event listeners to project divs
-        document.querySelectorAll('.project').forEach(project => {
+        document.querySelectorAll('.projects .container').forEach(project => {
             project.addEventListener('click', () => {
                 updateSelectedProject(project.id);
             });
         });
     </script>
+    <script src="scrollreveal.js"></script>
+    <script src="animate.js"></script>
 
 </body>
 

@@ -119,7 +119,7 @@ section {
         padding-right: 5%;
         flex-direction: row;
 
-        .project {
+        .container {
             flex: 1;
             margin: 1%;
             flex-direction: column;
@@ -139,7 +139,7 @@ section {
             }
         }
 
-        .project:hover {
+        .container:hover {
             transform: scale(1.02);
             background-color: rgb(199, 199, 199);
         }

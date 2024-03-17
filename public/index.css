@@ -109,7 +109,7 @@ section {
   padding-right: 5%;
   flex-direction: row;
 }
-.projects .envelope .project {
+.projects .envelope .container {
   flex: 1;
   margin: 1%;
   flex-direction: column;
@@ -123,12 +123,12 @@ section {
   transition-timing-function: ease;
   transition-delay: 0s;
 }
-.projects .envelope .project li {
+.projects .envelope .container li {
   font-size: 16px;
   list-style-type: none;
 }
-.projects .envelope .project:hover {
-  transform: scale(1.02);
+.projects .envelope .container:hover {
+  transform: scale(2);
   background-color: rgb(199, 199, 199);
 }
 
