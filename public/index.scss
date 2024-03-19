@@ -23,12 +23,27 @@ section {
     align-items: center;
 }
 
-.heading {
+#home {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    cursor: default;
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        cursor: default;
+    }
+
+    .socials {
+        display: flex;
+        padding-top: 10px;
+        flex-direction: row;
+        gap: 2em;
+        cursor: pointer;
+    }
 }
+
+
 
 .about {
     padding: 5%;
