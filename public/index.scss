@@ -198,3 +198,57 @@ section {
         transform: translateY(5px);
     }
 }
+
+.contact {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    h2 {
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+
+    form {
+        width: 80vw;
+        margin: 0 auto;
+
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+
+            textarea {
+                resize: vertical;
+            }
+        }
+
+        button {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #000000;
+            }
+        }
+    }
+}

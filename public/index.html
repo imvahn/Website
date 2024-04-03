@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 
 <head>
@@ -8,13 +8,13 @@
         Vahn Kessler
     </title>
 
-    <!-- <link rel="stylesheet" href="index.scss">
+    <link rel="stylesheet" href="index.scss">
     <link rel="stylesheet" href="navbar.scss">
-    <link rel="stylesheet" href="button.scss"> -->
+    <link rel="stylesheet" href="button.scss">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura&display=swap">
-    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="button.css"> -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -25,12 +25,13 @@
         <a href="#about">ABOUT</a>
         <a href="#projects">PROJECTS</a>
         <a href="#skills">SKILLS</a>
-        <!-- <a href="blog.html">LOG</a> -->
+        <a href="#contact">CONTACT</a>
     </div>
     <section id="home">
         <div class="heading">
             <p style="font-size: 50px;">Vahn Kessler</p>
-            <p style="font-size: 30px;">Triple Major in: Computer Science, Mathematics, Music<br>at Wesleyan University
+            <p style="font-size: 30px;">Triple Major in: Computer Science, Mathematics, Music<br>at Wesleyan
+                University
             </p>
 
         </div>
@@ -64,7 +65,8 @@
             </div>
         </div>
         <div class="about-me">
-            <p>I am a researcher, musician, designer and data scientist who is passionate about the intersection of art
+            <p>I am a researcher, musician, designer and data scientist who is passionate about the intersection of
+                art
                 and technology and its power to inspire and impact. If I'm not
                 working on privacy research at Wesleyan's <a href="https://wesleyancs-plp.gitlab.io/site/"
                     target="_blank">PL
@@ -81,7 +83,8 @@
         <div class="envelope">
             <div class="container" id="game">
                 <h1>VIRTUAL ESCAPE ROOM</h1>
-                <p>Developed a 3D virtual escape room in Unity with several puzzles that utilize innovative and creative
+                <p>Developed a 3D virtual escape room in Unity with several puzzles that utilize innovative and
+                    creative
                     interactions, a
                     well-crafted layout, a compelling theme, and noteworthy visual effects and graphics. Click me to
                     play!</p>
@@ -100,7 +103,8 @@
             </div>
             <div class="container" id="game">
                 <h1>MUSIC TIME</h1>
-                <p>Developed a 2D platformer video game in Unity with unique, music-based level mechanics. Created all
+                <p>Developed a 2D platformer video game in Unity with unique, music-based level mechanics. Created
+                    all
                     the music
                     from
                     scratch. Click me to play!</p>
@@ -118,7 +122,8 @@
                 <h1>CHESS VISUALIZATIONS</h1>
                 <p>Used R Studio to pull chess.com datasets of the top chess players in the world to make five
                     interactive data
-                    visualizations mapping openings, ELO, board positions, and player locations. Click me to view them!
+                    visualizations mapping openings, ELO, board positions, and player locations. Click me to view
+                    them!
                 </p>
             </div>
         </div>
@@ -200,6 +205,26 @@
             <li>Sound Systems and Psychoacoustics</li>
           </ul>
         </div> -->
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact">
+            <h2>TALK TO ME!</h2>
+            <form action="connect.php" method="post">
+                <div class="form-group">
+                    <label for="name">NAME</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">MESSAGE</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
 
